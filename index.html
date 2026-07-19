@@ -8,12 +8,12 @@
 
 <title>Delaunay Book — Nicholas Van-Orton</title>
 
-<meta name="description" content="The Delaunay Archive">
+<meta name="description" content="Delaunay Book — Private Digital Archive">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 
 <style>
@@ -21,19 +21,20 @@
 
 :root{
 
---black:#030303;
+--bg:#020202;
 
---gold:#b8954d;
+--gold:#b9964b;
 
---gold-light:#e8d59a;
+--gold-soft:#e8d49a;
 
---white:#f1ebdf;
+--text:#eee8dc;
 
---muted:#aaa397;
+--muted:#a8a093;
 
---line:rgba(184,149,77,.35);
+--line:rgba(185,150,75,.32);
 
 }
+
 
 
 *{
@@ -47,6 +48,7 @@ box-sizing:border-box;
 }
 
 
+
 html{
 
 scroll-behavior:smooth;
@@ -54,11 +56,12 @@ scroll-behavior:smooth;
 }
 
 
+
 body{
 
-background:var(--black);
+background:var(--bg);
 
-color:var(--white);
+color:var(--text);
 
 font-family:"Inter",sans-serif;
 
@@ -66,6 +69,9 @@ overflow-x:hidden;
 
 }
 
+
+
+/* subtle luxury texture */
 
 
 body::before{
@@ -78,15 +84,17 @@ inset:0;
 
 pointer-events:none;
 
-opacity:.04;
+opacity:.035;
 
 background-image:
 
-radial-gradient(#fff .6px,transparent .6px);
+radial-gradient(#fff .7px,transparent .7px);
 
-background-size:90px 90px;
+background-size:85px 85px;
 
 }
+
+
 
 
 
@@ -95,7 +103,7 @@ background-size:90px 90px;
 
 .hero{
 
-min-height:100svh;
+height:100svh;
 
 display:flex;
 
@@ -103,31 +111,33 @@ align-items:center;
 
 justify-content:center;
 
-padding:50px 30px;
+padding:40px 25px;
 
 }
+
 
 
 .hero-inner{
 
 width:100%;
 
-max-width:1300px;
+max-width:1400px;
 
 text-align:center;
 
 }
 
 
-.eyebrow{
+
+.hero-label{
 
 font-size:11px;
 
-letter-spacing:10px;
+letter-spacing:12px;
 
 color:var(--gold);
 
-margin-bottom:70px;
+margin-bottom:85px;
 
 }
 
@@ -139,11 +149,11 @@ font-family:"Cormorant Garamond",serif;
 
 font-weight:300;
 
-font-size:clamp(75px,12vw,180px);
+font-size:clamp(85px,12vw,190px);
 
-line-height:.95;
+line-height:.85;
 
-letter-spacing:12px;
+letter-spacing:18px;
 
 }
 
@@ -153,56 +163,68 @@ letter-spacing:12px;
 
 display:block;
 
-margin-top:75px;
+margin-top:95px;
 
-color:var(--gold-light);
+letter-spacing:45px;
 
-letter-spacing:28px;
+color:var(--gold-soft);
 
 }
 
 
 
-.divider{
+.hero-rule{
 
-width:120px;
+width:140px;
 
 height:1px;
 
-background:var(--gold);
+background:linear-gradient(
 
-margin:70px auto;
+90deg,
+
+transparent,
+
+var(--gold),
+
+transparent
+
+);
+
+margin:95px auto;
 
 }
 
 
 
-.hero-text{
+.hero-subtitle{
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:30px;
+font-size:34px;
 
 font-weight:300;
 
 line-height:1.6;
 
-max-width:700px;
+max-width:760px;
 
 margin:auto;
 
-color:#d8d0c2;
+color:#d7cfbf;
 
 }
 
 
 
-/* ARCHIVE */
+
+
+/* ARCHIVE INTRO */
 
 
 .archive{
 
-max-width:1400px;
+max-width:1500px;
 
 margin:auto;
 
@@ -214,7 +236,7 @@ padding:120px 8vw;
 
 .archive-header{
 
-margin-bottom:90px;
+margin-bottom:120px;
 
 }
 
@@ -222,13 +244,13 @@ margin-bottom:90px;
 
 .archive-header h2{
 
-font-family:"Cormorant Garamond";
+font-family:"Cormorant Garamond",serif;
+
+font-size:100px;
 
 font-weight:300;
 
-font-size:85px;
-
-color:var(--gold-light);
+color:var(--gold-soft);
 
 }
 
@@ -236,24 +258,26 @@ color:var(--gold-light);
 
 .archive-header p{
 
+margin-top:25px;
+
 font-size:11px;
 
-letter-spacing:6px;
+letter-spacing:8px;
 
 color:#777;
-
-margin-top:20px;
 
 }
 
 
 
-/* CHAPTER */
 
 
-.chapter{
+/* ART SECTION */
 
-padding:80px 0;
+
+.art-section{
+
+padding:100px 0;
 
 border-top:1px solid var(--line);
 
@@ -261,33 +285,35 @@ border-top:1px solid var(--line);
 
 
 
-.chapter-title{
+.art-title{
 
-font-family:"Cormorant Garamond";
+font-family:"Cormorant Garamond",serif;
 
 font-weight:300;
 
-font-size:clamp(42px,5vw,75px);
+font-size:clamp(45px,6vw,90px);
 
-line-height:1.1;
+line-height:1.05;
 
-color:var(--gold-light);
+max-width:1100px;
 
-max-width:1000px;
+color:var(--gold-soft);
 
-margin-bottom:30px;
+margin-bottom:40px;
 
 }
 
 
 
-.chapter-text{
+.art-description{
 
-font-size:18px;
+max-width:800px;
 
-line-height:1.9;
+font-size:20px;
 
-max-width:760px;
+font-weight:300;
+
+line-height:2;
 
 color:var(--muted);
 
@@ -295,54 +321,52 @@ color:var(--muted);
   <style>
 
 
-/* METADATA */
+/* ARCHIVE DETAILS */
 
 
-.metadata{
+.archive-details{
 
-margin-top:45px;
+margin-top:70px;
 
-display:flex;
+padding:45px 0;
 
-flex-direction:column;
+border-top:1px solid var(--line);
 
-gap:20px;
+border-bottom:1px solid var(--line);
 
-}
+display:grid;
 
+grid-template-columns:1fr 1fr;
 
-
-.metadata-row{
-
-display:flex;
-
-align-items:flex-start;
-
-gap:30px;
-
-font-size:15px;
+gap:50px;
 
 }
 
 
 
-.metadata-label{
+.detail-label{
 
-width:90px;
+display:block;
 
-font-size:11px;
+font-size:10px;
 
-letter-spacing:4px;
+letter-spacing:5px;
 
 color:var(--gold);
 
+margin-bottom:18px;
+
 }
 
 
 
-.metadata-value{
+.detail-value{
 
-color:#d8d0c2;
+font-size:16px;
+
+letter-spacing:2px;
+
+color:var(--text);
 
 }
 
@@ -352,66 +376,66 @@ color:#d8d0c2;
 
 font-family:"Courier New",monospace;
 
-font-size:13px;
+font-size:14px;
 
-line-height:1.8;
+line-height:2;
 
-letter-spacing:2px;
+letter-spacing:3px;
 
-color:var(--gold-light);
+color:var(--gold-soft);
 
 }
 
 
 
-/* LINKS */
+/* SECTION LINKS */
 
 
-.chapter-links{
+.section-links{
 
 display:flex;
 
-gap:45px;
+gap:60px;
 
-margin-top:45px;
+margin-top:55px;
 
 }
 
 
 
-.chapter-links a{
+.section-links a{
 
-font-size:14px;
+font-size:15px;
 
-letter-spacing:4px;
-
-color:var(--gold-light);
+letter-spacing:5px;
 
 text-decoration:none;
 
-padding:12px 0;
+color:var(--gold-soft);
 
 position:relative;
+
+padding-bottom:12px;
 
 }
 
 
 
-.chapter-links a::after{
+.section-links a::after{
 
 content:"";
 
 position:absolute;
 
-bottom:5px;
-
 left:0;
 
-width:0;
+bottom:0;
 
 height:1px;
 
-background:var(--gold-light);
+width:0;
+
+background:var(--gold-soft);
 
 transition:.5s;
 
@@ -419,11 +443,13 @@ transition:.5s;
 
 
 
-.chapter-links a:hover::after{
+.section-links a:hover::after{
 
 width:100%;
 
 }
+
+
 
 
 
@@ -434,7 +460,7 @@ footer{
 
 border-top:1px solid var(--line);
 
-padding:100px 25px 70px;
+padding:120px 25px 80px;
 
 text-align:center;
 
@@ -444,15 +470,15 @@ text-align:center;
 
 footer h3{
 
-font-family:"Cormorant Garamond";
+font-family:"Cormorant Garamond",serif;
+
+font-size:64px;
 
 font-weight:300;
 
-font-size:58px;
+color:var(--gold-soft);
 
-color:var(--gold-light);
-
-margin-bottom:35px;
+margin-bottom:45px;
 
 }
 
@@ -462,7 +488,7 @@ footer a{
 
 display:block;
 
-font-size:15px;
+font-size:16px;
 
 letter-spacing:3px;
 
@@ -470,15 +496,15 @@ color:#ddd;
 
 text-decoration:none;
 
-margin:18px;
+margin:20px;
 
 }
 
 
 
-.footer-mark{
+.footer-signature{
 
-margin-top:55px;
+margin-top:70px;
 
 font-size:10px;
 
@@ -490,16 +516,16 @@ color:#666;
 
 
 
-/* ANIMATION */
+/* REVEAL */
 
 
 .reveal{
 
 opacity:0;
 
-transform:translateY(25px);
+transform:translateY(30px);
 
-transition:1s ease;
+transition:1.1s ease;
 
 }
 
@@ -515,6 +541,8 @@ transform:none;
 
 
 
+
+
 /* TABLET */
 
 
@@ -523,40 +551,61 @@ transform:none;
 
 .hero-title{
 
-font-size:100px;
+font-size:105px;
+
+letter-spacing:10px;
 
 }
+
 
 
 .hero-title span{
 
-letter-spacing:18px;
+letter-spacing:25px;
+
+margin-top:70px;
 
 }
+
 
 
 .archive{
 
-padding:90px 40px;
+padding:100px 40px;
 
 }
+
 
 
 .archive-header h2{
 
-font-size:70px;
+font-size:75px;
 
 }
 
 
-.chapter-title{
 
-font-size:55px;
+.art-title{
+
+font-size:65px;
+
+}
+
+
+
+.archive-details{
+
+grid-template-columns:1fr;
+
+gap:35px;
 
 }
 
 
+
 }
+
+
 
 
 
@@ -568,19 +617,21 @@ font-size:55px;
 
 .hero{
 
-padding:30px 20px;
+height:100svh;
+
+padding:25px 20px;
 
 }
 
 
 
-.eyebrow{
+.hero-label{
 
 font-size:9px;
 
-letter-spacing:5px;
+letter-spacing:6px;
 
-margin-bottom:45px;
+margin-bottom:55px;
 
 }
 
@@ -590,7 +641,7 @@ margin-bottom:45px;
 
 font-size:62px;
 
-letter-spacing:3px;
+letter-spacing:4px;
 
 }
 
@@ -600,25 +651,25 @@ letter-spacing:3px;
 
 margin-top:45px;
 
-letter-spacing:12px;
+letter-spacing:13px;
 
 }
 
 
 
-.hero-text{
+.hero-rule{
 
-font-size:22px;
+margin:55px auto;
+
+width:90px;
 
 }
 
 
 
-.divider{
+.hero-subtitle{
 
-margin:50px auto;
-
-width:80px;
+font-size:23px;
 
 }
 
@@ -632,33 +683,49 @@ padding:70px 22px;
 
 
 
+.archive-header{
+
+margin-bottom:70px;
+
+}
+
+
+
 .archive-header h2{
 
-font-size:50px;
+font-size:52px;
 
 }
 
 
 
-.chapter{
+.archive-header p{
 
-padding:55px 0;
-
-}
-
-
-
-.chapter-title{
-
-font-size:40px;
+letter-spacing:5px;
 
 }
 
 
 
-.chapter-text{
+.art-section{
 
-font-size:16px;
+padding:65px 0;
+
+}
+
+
+
+.art-title{
+
+font-size:42px;
+
+}
+
+
+
+.art-description{
+
+font-size:17px;
 
 line-height:1.8;
 
@@ -666,35 +733,51 @@ line-height:1.8;
 
 
 
-.metadata-row{
+.archive-details{
 
-display:block;
-
-}
-
-
-
-.metadata-label{
-
-margin-bottom:10px;
+padding:35px 0;
 
 }
 
 
 
-.chapter-links{
+.detail-value{
 
-gap:30px;
-
-flex-wrap:wrap;
+font-size:14px;
 
 }
 
 
 
-.chapter-links a{
+.hash-value{
+
+font-size:11px;
+
+letter-spacing:2px;
+
+line-height:2.3;
+
+word-break:break-all;
+
+}
+
+
+
+.section-links{
+
+gap:35px;
+
+margin-top:40px;
+
+}
+
+
+
+.section-links a{
 
 font-size:13px;
+
+letter-spacing:4px;
 
 }
 
@@ -702,7 +785,7 @@ font-size:13px;
 
 footer{
 
-padding:80px 20px 60px;
+padding:90px 20px 60px;
 
 }
 
@@ -710,7 +793,7 @@ padding:80px 20px 60px;
 
 footer h3{
 
-font-size:42px;
+font-size:46px;
 
 }
 
@@ -722,11 +805,13 @@ font-size:13px;
 
 letter-spacing:2px;
 
+word-break:break-word;
+
 }
 
 
 
-.footer-mark{
+.footer-signature{
 
 font-size:8px;
 
@@ -748,13 +833,14 @@ letter-spacing:5px;
 <body>
 
 
+
 <section class="hero">
 
 
 <div class="hero-inner reveal">
 
 
-<div class="eyebrow">
+<div class="hero-label">
 PRIVATE DIGITAL ARCHIVE
 </div>
 
@@ -772,14 +858,14 @@ BOOK
 
 
 
-<div class="divider"></div>
+<div class="hero-rule"></div>
 
 
 
-<p class="hero-text">
+<p class="hero-subtitle">
 
-Color, identity and artistic legacy preserved
-through a contemporary digital archive.
+Color, identity and artistic legacy
+preserved through a refined digital manuscript.
 
 </p>
 
@@ -808,36 +894,39 @@ ARTISTIC RESEARCH · DIGITAL CATALOGUE
 
 
 </div>
-<section class="chapter reveal">
+<!-- ARTISTIC ARCHIVE SECTIONS -->
 
 
-<h2 class="chapter-title">
+<section class="art-section reveal">
+
+
+<h2 class="art-title">
 
 Color as a Generative Principle in the Work of Sonia Delaunay
 
 </h2>
 
 
-<p class="chapter-text">
+<p class="art-description">
 
 A study of chromatic movement, simultaneous contrast
-and the relationship between color, rhythm and artistic
-structure in the work of Sonia Delaunay.
+and the relationship between color, rhythm and
+artistic structure in the work of Sonia Delaunay.
 
 </p>
 
 
 
-<div class="metadata">
+<div class="archive-details">
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 ISBN
-</div>
+</span>
 
-<div class="metadata-value">
+<div class="detail-value">
 xxxxxxxxx
 </div>
 
@@ -845,13 +934,13 @@ xxxxxxxxx
 
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 SHA-256
-</div>
+</span>
 
-<div class="metadata-value hash-value">
+<div class="hash-value">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -865,7 +954,8 @@ xxxxxxxxxxxxxxxx
 
 
 
-<div class="chapter-links">
+<div class="section-links">
+
 
 <a href="#" target="_blank" rel="noopener noreferrer">
 DOI
@@ -873,8 +963,9 @@ DOI
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
-Book
+BOOK
 </a>
+
 
 </div>
 
@@ -885,17 +976,17 @@ Book
 
 
 
-<section class="chapter reveal">
+<section class="art-section reveal">
 
 
-<h2 class="chapter-title">
+<h2 class="art-title">
 
 The Simultaneous Language of Color and Movement
 
 </h2>
 
 
-<p class="chapter-text">
+<p class="art-description">
 
 An exploration of visual harmony, optical interaction
 and the dynamic principles that transformed modern
@@ -905,16 +996,16 @@ artistic expression.
 
 
 
-<div class="metadata">
+<div class="archive-details">
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 ISBN
-</div>
+</span>
 
-<div class="metadata-value">
+<div class="detail-value">
 xxxxxxxxx
 </div>
 
@@ -922,13 +1013,13 @@ xxxxxxxxx
 
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 SHA-256
-</div>
+</span>
 
-<div class="metadata-value hash-value">
+<div class="hash-value">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -942,7 +1033,8 @@ xxxxxxxxxxxxxxxx
 
 
 
-<div class="chapter-links">
+<div class="section-links">
+
 
 <a href="#" target="_blank" rel="noopener noreferrer">
 DOI
@@ -950,8 +1042,9 @@ DOI
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
-Book
+BOOK
 </a>
+
 
 </div>
 
@@ -962,19 +1055,19 @@ Book
 
 
 
-<section class="chapter reveal">
+<section class="art-section reveal">
 
 
-<h2 class="chapter-title">
+<h2 class="art-title">
 
 Chromatic Rhythm as Visual Architecture
 
 </h2>
 
 
-<p class="chapter-text">
+<p class="art-description">
 
-A catalogue entry examining the structure of color,
+A catalogue study examining the structure of color,
 geometric relationships and the emotional dimension
 of abstract composition.
 
@@ -982,16 +1075,16 @@ of abstract composition.
 
 
 
-<div class="metadata">
+<div class="archive-details">
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 ISBN
-</div>
+</span>
 
-<div class="metadata-value">
+<div class="detail-value">
 xxxxxxxxx
 </div>
 
@@ -999,13 +1092,13 @@ xxxxxxxxx
 
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 SHA-256
-</div>
+</span>
 
-<div class="metadata-value hash-value">
+<div class="hash-value">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -1019,7 +1112,8 @@ xxxxxxxxxxxxxxxx
 
 
 
-<div class="chapter-links">
+<div class="section-links">
+
 
 <a href="#" target="_blank" rel="noopener noreferrer">
 DOI
@@ -1027,24 +1121,25 @@ DOI
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
-Book
+BOOK
 </a>
+
 
 </div>
 
 
 </section>
-<section class="chapter reveal">
+<section class="art-section reveal">
 
 
-<h2 class="chapter-title">
+<h2 class="art-title">
 
 Geometry, Emotion and the Evolution of Abstract Vision
 
 </h2>
 
 
-<p class="chapter-text">
+<p class="art-description">
 
 A curated research chapter exploring the connection
 between mathematical structure, visual balance and
@@ -1054,16 +1149,16 @@ the emotional power of artistic expression.
 
 
 
-<div class="metadata">
+<div class="archive-details">
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 ISBN
-</div>
+</span>
 
-<div class="metadata-value">
+<div class="detail-value">
 xxxxxxxxx
 </div>
 
@@ -1071,13 +1166,13 @@ xxxxxxxxx
 
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 SHA-256
-</div>
+</span>
 
-<div class="metadata-value hash-value">
+<div class="hash-value">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -1091,7 +1186,8 @@ xxxxxxxxxxxxxxxx
 
 
 
-<div class="chapter-links">
+<div class="section-links">
+
 
 <a href="#" target="_blank" rel="noopener noreferrer">
 DOI
@@ -1099,8 +1195,9 @@ DOI
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
-Book
+BOOK
 </a>
+
 
 </div>
 
@@ -1111,17 +1208,17 @@ Book
 
 
 
-<section class="chapter reveal">
+<section class="art-section reveal">
 
 
-<h2 class="chapter-title">
+<h2 class="art-title">
 
 The Digital Preservation of Artistic Heritage
 
 </h2>
 
 
-<p class="chapter-text">
+<p class="art-description">
 
 A modern archival approach dedicated to protecting,
 verifying and presenting cultural knowledge through
@@ -1131,16 +1228,16 @@ advanced digital documentation.
 
 
 
-<div class="metadata">
+<div class="archive-details">
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 ISBN
-</div>
+</span>
 
-<div class="metadata-value">
+<div class="detail-value">
 xxxxxxxxx
 </div>
 
@@ -1148,13 +1245,13 @@ xxxxxxxxx
 
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 SHA-256
-</div>
+</span>
 
-<div class="metadata-value hash-value">
+<div class="hash-value">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -1168,7 +1265,8 @@ xxxxxxxxxxxxxxxx
 
 
 
-<div class="chapter-links">
+<div class="section-links">
+
 
 <a href="#" target="_blank" rel="noopener noreferrer">
 DOI
@@ -1176,8 +1274,9 @@ DOI
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
-Book
+BOOK
 </a>
+
 
 </div>
 
@@ -1188,17 +1287,17 @@ Book
 
 
 
-<section class="chapter reveal">
+<section class="art-section reveal">
 
 
-<h2 class="chapter-title">
+<h2 class="art-title">
 
 A Contemporary Legacy of Color and Innovation
 
 </h2>
 
 
-<p class="chapter-text">
+<p class="art-description">
 
 The final archive chapter connecting historical
 artistic principles with future-oriented digital
@@ -1208,16 +1307,16 @@ identity and preservation.
 
 
 
-<div class="metadata">
+<div class="archive-details">
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 ISBN
-</div>
+</span>
 
-<div class="metadata-value">
+<div class="detail-value">
 xxxxxxxxx
 </div>
 
@@ -1225,13 +1324,13 @@ xxxxxxxxx
 
 
 
-<div class="metadata-row">
+<div>
 
-<div class="metadata-label">
+<span class="detail-label">
 SHA-256
-</div>
+</span>
 
-<div class="metadata-value hash-value">
+<div class="hash-value">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -1245,7 +1344,8 @@ xxxxxxxxxxxxxxxx
 
 
 
-<div class="chapter-links">
+<div class="section-links">
+
 
 <a href="#" target="_blank" rel="noopener noreferrer">
 DOI
@@ -1253,13 +1353,15 @@ DOI
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
-Book
+BOOK
 </a>
+
 
 </div>
 
 
 </section>
+
 
 
 </section>
@@ -1288,7 +1390,7 @@ did:web:identity.nvo987.us
 
 
 
-<div class="footer-mark">
+<div class="footer-signature">
 
 THE DELAUNAY ARCHIVE
 
@@ -1332,7 +1434,7 @@ threshold:0.12
 
 document
 .querySelectorAll(".reveal")
-.forEach(element=>{
+.forEach((element)=>{
 
 observer.observe(element);
 
@@ -1340,7 +1442,6 @@ observer.observe(element);
 
 
 </script>
-
 
 
 </body>
