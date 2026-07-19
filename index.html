@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delaunay Book | Premium Digital Identity</title>
+
+<meta name="description" content="Premium digital identity and decentralized web presentation.">
+<meta name="keywords" content="Delaunay Book,DID,Identity,Digital Identity,Premium">
+<meta name="author" content="Nicholas Van-Orton">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Delaunay Book">
+<meta property="og:description" content="Premium digital identity experience.">
+<meta property="og:url" content="https://delaunaybook.us">
+
+<meta name="theme-color" content="#000000">
+
+<link rel="icon" href="favicon.ico">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#000;
+background:
+radial-gradient(circle at top,#1a1a1a 0%,#000 65%);
+
+color:#ffffff;
+
+font-family:'Cormorant Garamond',serif;
+
+overflow-x:hidden;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:#d4af37;
+
+transition:.3s;
+
+}
+
+a:hover{
+
+color:#ffe48c;
+
+}
+
+header{
+
+min-height:60vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:70px 25px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+header::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,
+rgba(212,175,55,.18),
+transparent 70%);
+
+filter:blur(35px);
+
+animation:pulse 8s infinite ease-in-out;
+
+}
+
+.banner{
+
+position:relative;
+
+z-index:2;
+
+max-width:1100px;
+
+width:100%;
+
+padding:65px;
+
+text-align:center;
+
+border:1px solid rgba(212,175,55,.55);
+
+background:rgba(255,255,255,.02);
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+
+0 0 45px rgba(212,175,55,.12),
+
+inset 0 0 30px rgba(212,175,55,.06);
+
+}
+
+.banner h1{
+
+font-family:'Cinzel',serif;
+
+font-size:64px;
+
+font-weight:700;
+
+letter-spacing:8px;
+
+text-transform:uppercase;
+
+color:#d4af37;
+
+text-shadow:
+
+0 0 15px rgba(212,175,55,.35);
+
+margin-bottom:20px;
+
+}
+
+.banner p{
+
+font-size:24px;
+
+color:#f5f5f5;
+
+letter-spacing:1px;
+
+line-height:1.7;
+
+}
+
+main{
+
+max-width:1400px;
+
+margin:auto;
+
+padding:70px 35px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+.card{
+
+background:
+
+linear-gradient(180deg,
+rgba(255,255,255,.04),
+rgba(255,255,255,.015));
+
+border-top:2px solid #d4af37;
+
+border-bottom:2px solid #d4af37;
+
+padding:35px;
+
+transition:.45s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:4px;
+
+height:100%;
+
+background:#d4af37;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+
+0 18px 35px rgba(212,175,55,.18);
+
+}
+
+.card h2{
+
+font-family:'Cinzel',serif;
+
+font-size:28px;
+
+color:#d4af37;
+
+margin-bottom:18px;
+
+}
+
+.card p{
+
+font-size:21px;
+
+line-height:1.7;
+
+color:#ffffff;
+
+}
+
+footer{
+
+margin-top:90px;
+
+padding:45px;
+
+text-align:center;
+
+border-top:1px solid rgba(212,175,55,.35);
+
+background:#070707;
+
+}
+
+footer h3{
+
+font-family:'Cinzel',serif;
+
+font-size:26px;
+
+color:#d4af37;
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+opacity:.45;
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:.45;
+
+}
+
+}
+
+.fade{
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:1s;
+
+}
+
+.fade.visible{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+@media(max-width:768px){
+
+.banner{
+
+padding:35px;
+
+}
+
+.banner h1{
+
+font-size:42px;
+
+letter-spacing:4px;
+
+}
+
+.banner p{
+
+font-size:20px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="banner">
+
+<h1>DELAUNAY BOOK</h1>
+
+<p>
+Premium Digital Identity<br>
+Modern • Elegant • Decentralized
+</p>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="cards">
+  <div class="card fade">
+
+<h2>Chapter One</h2>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Integer malesuada, elit vitae elementum pretium,
+ligula neque tincidunt risus, vitae luctus libero
+erat sed lorem. Vivamus vulputate sapien vel
+nibh dignissim, sed malesuada erat hendrerit.
+</p>
+
+</div>
+
+<div class="card fade">
+
+<h2>Chapter Two</h2>
+
+<p>
+Suspendisse potenti. Donec sed arcu et justo
+interdum gravida. Nulla facilisi. Mauris vitae
+magna quis nibh feugiat porttitor eget vitae
+nibh. Curabitur euismod magna ut lorem luctus.
+</p>
+
+</div>
+
+<div class="card fade">
+
+<h2>Chapter Three</h2>
+
+<p>
+Praesent sed lectus ut magna tincidunt
+condimentum. Vestibulum ante ipsum primis
+in faucibus orci luctus et ultrices posuere
+cubilia curae; Integer luctus erat non massa.
+</p>
+
+</div>
+
+<div class="card fade">
+
+<h2>Chapter Four</h2>
+
+<p>
+Donec vulputate mauris vel justo consequat,
+quis viverra elit fermentum. Sed a magna
+malesuada, pellentesque orci nec, luctus
+erat. Pellentesque habitant morbi tristique.
+</p>
+
+</div>
+
+<div class="card fade">
+
+<h2>Chapter Five</h2>
+
+<p>
+Aliquam erat volutpat. Nam sed orci sed
+ipsum posuere aliquam. Curabitur pretium
+lorem vitae massa facilisis, nec varius
+lectus bibendum. Etiam eget sapien.
+</p>
+
+</div>
+
+<div class="card fade">
+
+<h2>Chapter Six</h2>
+
+<p>
+Ut luctus, metus ac posuere tincidunt,
+dolor lacus efficitur massa, eget maximus
+ligula elit nec justo. Duis eget ligula
+sed sapien tincidunt suscipit.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<h3>Nicholas Van-Orton</h3>
+
+<p>
+
+<a href="mailto:contact@delaunaybook.us">
+contact@delaunaybook.us
+</a>
+
+</p>
+
+<p>
+
+<a href="https://identity.nvo987.us">
+did:web:identity.nvo987.us
+</a>
+
+</p>
+
+<p style="margin-top:20px;color:#bfa75a;letter-spacing:2px;">
+
+© 2026 Delaunay Book · Premium Edition
+
+</p>
+
+</footer>
+
+<script>
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},{
+threshold:0.15
+});
+
+document.querySelectorAll(".fade").forEach(card=>{
+
+observer.observe(card);
+
+});
+
+</script>
+
+</body>
+</html>
