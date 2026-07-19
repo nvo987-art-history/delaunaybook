@@ -2,27 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Delaunay Book | Premium Digital Identity</title>
-
-<meta name="description" content="Premium digital identity and decentralized web presentation.">
-<meta name="keywords" content="Delaunay Book,DID,Identity,Digital Identity,Premium">
-<meta name="author" content="Nicholas Van-Orton">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Delaunay Book">
-<meta property="og:description" content="Premium digital identity experience.">
-<meta property="og:url" content="https://delaunaybook.us">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#000000">
+<title>Delaunay Book</title>
 
-<link rel="icon" href="favicon.ico">
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+
+--gold:#D4AF37;
+--gold2:#F6E27A;
+--gold3:#8C6B16;
+
+--bg:#050505;
+--card:rgba(255,255,255,.045);
+--line:rgba(212,175,55,.28);
+--text:#F5F5F5;
+
+}
 
 *{
 margin:0;
@@ -36,45 +37,51 @@ scroll-behavior:smooth;
 
 body{
 
-background:#000;
+font-family:Inter,sans-serif;
+
 background:
-radial-gradient(circle at top,#1a1a1a 0%,#000 65%);
+radial-gradient(circle at 20% 0%,rgba(212,175,55,.12),transparent 35%),
+radial-gradient(circle at 80% 10%,rgba(212,175,55,.08),transparent 30%),
+linear-gradient(180deg,#080808,#000);
 
-color:#ffffff;
-
-font-family:'Cormorant Garamond',serif;
+color:var(--text);
 
 overflow-x:hidden;
 
 }
 
-a{
+body::before{
 
-text-decoration:none;
+content:"";
 
-color:#d4af37;
+position:fixed;
 
-transition:.3s;
+inset:0;
+
+pointer-events:none;
+
+background:
+
+linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+
+background-size:40px 40px;
+
+opacity:.25;
 
 }
 
-a:hover{
+.hero{
 
-color:#ffe48c;
-
-}
-
-header{
-
-min-height:60vh;
+min-height:100vh;
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
 
-padding:70px 25px;
+justify-content:center;
+
+padding:40px 24px;
 
 position:relative;
 
@@ -82,9 +89,7 @@ overflow:hidden;
 
 }
 
-header::before{
-
-content:"";
+.glow{
 
 position:absolute;
 
@@ -94,119 +99,149 @@ height:700px;
 
 border-radius:50%;
 
-background:radial-gradient(circle,
-rgba(212,175,55,.18),
-transparent 70%);
+background:radial-gradient(circle,rgba(212,175,55,.20),transparent 70%);
 
-filter:blur(35px);
+filter:blur(60px);
 
-animation:pulse 8s infinite ease-in-out;
+animation:float 12s ease-in-out infinite;
 
 }
 
-.banner{
+.hero-box{
 
 position:relative;
 
 z-index:2;
 
-max-width:1100px;
+max-width:980px;
 
 width:100%;
 
-padding:65px;
+padding:50px;
 
-text-align:center;
+border:1px solid rgba(212,175,55,.35);
 
-border:1px solid rgba(212,175,55,.55);
+background:rgba(255,255,255,.03);
 
-background:rgba(255,255,255,.02);
-
-backdrop-filter:blur(10px);
+backdrop-filter:blur(18px);
 
 box-shadow:
 
-0 0 45px rgba(212,175,55,.12),
+0 0 80px rgba(212,175,55,.12),
 
-inset 0 0 30px rgba(212,175,55,.06);
+inset 0 0 30px rgba(212,175,55,.05);
 
 }
 
-.banner h1{
+.hero-box::before{
 
-font-family:'Cinzel',serif;
+content:"";
 
-font-size:64px;
+position:absolute;
 
-font-weight:700;
+left:0;
+
+top:0;
+
+height:2px;
+
+width:100%;
+
+background:linear-gradient(90deg,transparent,var(--gold),transparent);
+
+}
+
+.hero-box::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:0;
+
+height:2px;
+
+width:100%;
+
+background:linear-gradient(90deg,transparent,var(--gold),transparent);
+
+}
+
+h1{
+
+font-family:Cinzel,serif;
+
+font-size:clamp(46px,9vw,92px);
+
+font-weight:800;
 
 letter-spacing:8px;
 
-text-transform:uppercase;
+text-align:center;
 
-color:#d4af37;
+background:linear-gradient(var(--gold2),var(--gold),#8d6814);
 
-text-shadow:
+-webkit-background-clip:text;
 
-0 0 15px rgba(212,175,55,.35);
+-webkit-text-fill-color:transparent;
 
-margin-bottom:20px;
-
-}
-
-.banner p{
-
-font-size:24px;
-
-color:#f5f5f5;
-
-letter-spacing:1px;
-
-line-height:1.7;
+margin-bottom:25px;
 
 }
 
-main{
+.subtitle{
+
+font-size:clamp(17px,3vw,24px);
+
+text-align:center;
+
+color:#ECECEC;
+
+line-height:1.9;
+
+max-width:760px;
+
+margin:auto;
+
+}
+
+section{
 
 max-width:1400px;
 
 margin:auto;
 
-padding:70px 35px;
+padding:90px 22px;
 
 }
 
-.cards{
+.grid{
 
 display:grid;
 
-grid-template-columns:
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 
-repeat(auto-fit,minmax(320px,1fr));
-
-gap:35px;
+gap:28px;
 
 }
 
 .card{
 
-background:
-
-linear-gradient(180deg,
-rgba(255,255,255,.04),
-rgba(255,255,255,.015));
-
-border-top:2px solid #d4af37;
-
-border-bottom:2px solid #d4af37;
-
-padding:35px;
-
-transition:.45s;
-
 position:relative;
 
 overflow:hidden;
+
+padding:34px;
+
+background:var(--card);
+
+border:1px solid rgba(255,255,255,.06);
+
+backdrop-filter:blur(20px);
+
+transition:.45s;
 
 }
 
@@ -224,27 +259,59 @@ width:4px;
 
 height:100%;
 
-background:#d4af37;
+background:linear-gradient(var(--gold2),var(--gold3));
+
+}
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-140%;
+
+width:70%;
+
+height:100%;
+
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+
+transform:skewX(-24deg);
+
+transition:.8s;
+
+}
+
+.card:hover::after{
+
+left:180%;
 
 }
 
 .card:hover{
 
-transform:translateY(-8px);
+transform:translateY(-10px);
+
+border-color:rgba(212,175,55,.45);
 
 box-shadow:
 
-0 18px 35px rgba(212,175,55,.18);
+0 20px 40px rgba(0,0,0,.45),
+
+0 0 30px rgba(212,175,55,.12);
 
 }
 
 .card h2{
 
-font-family:'Cinzel',serif;
+font-family:Cinzel,serif;
+
+color:var(--gold);
 
 font-size:28px;
-
-color:#d4af37;
 
 margin-bottom:18px;
 
@@ -252,113 +319,111 @@ margin-bottom:18px;
 
 .card p{
 
-font-size:21px;
+font-size:17px;
 
-line-height:1.7;
+line-height:1.9;
 
-color:#ffffff;
+color:#ECECEC;
 
 }
 
 footer{
 
-margin-top:90px;
+margin-top:60px;
 
-padding:45px;
+padding:70px 20px;
+
+border-top:1px solid rgba(212,175,55,.25);
+
+background:linear-gradient(#050505,#020202);
 
 text-align:center;
-
-border-top:1px solid rgba(212,175,55,.35);
-
-background:#070707;
 
 }
 
 footer h3{
 
-font-family:'Cinzel',serif;
+font-family:Cinzel,serif;
 
-font-size:26px;
+font-size:32px;
 
-color:#d4af37;
+color:var(--gold);
 
-margin-bottom:15px;
-
-}
-
-footer p{
-
-font-size:20px;
-
-line-height:2;
+margin-bottom:20px;
 
 }
 
-@keyframes pulse{
+footer a{
 
-0%{
+display:inline-block;
 
-transform:scale(1);
+margin:10px;
 
-opacity:.45;
+color:white;
 
-}
+text-decoration:none;
 
-50%{
-
-transform:scale(1.08);
-
-opacity:.8;
+transition:.35s;
 
 }
 
-100%{
+footer a:hover{
 
-transform:scale(1);
-
-opacity:.45;
+color:var(--gold2);
 
 }
 
-}
+@keyframes float{
 
-.fade{
-
-opacity:0;
-
-transform:translateY(30px);
-
-transition:1s;
-
-}
-
-.fade.visible{
-
-opacity:1;
+0%,100%{
 
 transform:translateY(0);
 
 }
 
-@media(max-width:768px){
+50%{
 
-.banner{
-
-padding:35px;
+transform:translateY(-35px);
 
 }
 
-.banner h1{
+}
 
-font-size:42px;
+.reveal{
+
+opacity:0;
+
+transform:translateY(50px);
+
+transition:1s;
+
+}
+
+.reveal.show{
+
+opacity:1;
+
+transform:none;
+
+}
+
+@media(max-width:700px){
+
+.hero-box{
+
+padding:34px 22px;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+h1{
 
 letter-spacing:4px;
-
-}
-
-.banner p{
-
-font-size:20px;
 
 }
 
@@ -370,158 +435,90 @@ font-size:20px;
 
 <body>
 
-<header>
+<div class="hero">
 
-<div class="banner">
+<div class="glow"></div>
+
+<div class="hero-box">
 
 <h1>DELAUNAY BOOK</h1>
 
-<p>
+<p class="subtitle">
 Premium Digital Identity<br>
-Modern • Elegant • Decentralized
+Timeless Design · Secure Presence · Modern Architecture
 </p>
 
 </div>
 
-</header>
-
-<main>
-
-<section class="cards">
-  <div class="card fade">
-
-<h2>Chapter One</h2>
-
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Integer malesuada, elit vitae elementum pretium,
-ligula neque tincidunt risus, vitae luctus libero
-erat sed lorem. Vivamus vulputate sapien vel
-nibh dignissim, sed malesuada erat hendrerit.
-</p>
-
 </div>
 
-<div class="card fade">
+<section>
 
-<h2>Chapter Two</h2>
+<div class="grid">
 
-<p>
-Suspendisse potenti. Donec sed arcu et justo
-interdum gravida. Nulla facilisi. Mauris vitae
-magna quis nibh feugiat porttitor eget vitae
-nibh. Curabitur euismod magna ut lorem luctus.
-</p>
-
+<div class="card reveal">
+<h2>Identity</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi.</p>
 </div>
 
-<div class="card fade">
-
-<h2>Chapter Three</h2>
-
-<p>
-Praesent sed lectus ut magna tincidunt
-condimentum. Vestibulum ante ipsum primis
-in faucibus orci luctus et ultrices posuere
-cubilia curae; Integer luctus erat non massa.
-</p>
-
+<div class="card reveal">
+<h2>Security</h2>
+<p>Vivamus finibus orci vitae sapien posuere, vitae tristique arcu efficitur. Curabitur euismod.</p>
 </div>
 
-<div class="card fade">
-
-<h2>Chapter Four</h2>
-
-<p>
-Donec vulputate mauris vel justo consequat,
-quis viverra elit fermentum. Sed a magna
-malesuada, pellentesque orci nec, luctus
-erat. Pellentesque habitant morbi tristique.
-</p>
-
+<div class="card reveal">
+<h2>Innovation</h2>
+<p>Integer elementum metus quis magna facilisis, sed ultricies nibh consequat. Donec viverra.</p>
 </div>
 
-<div class="card fade">
-
-<h2>Chapter Five</h2>
-
-<p>
-Aliquam erat volutpat. Nam sed orci sed
-ipsum posuere aliquam. Curabitur pretium
-lorem vitae massa facilisis, nec varius
-lectus bibendum. Etiam eget sapien.
-</p>
-
+<div class="card reveal">
+<h2>Architecture</h2>
+<p>Aliquam erat volutpat. Etiam tristique magna quis tortor luctus, eget posuere justo luctus.</p>
 </div>
 
-<div class="card fade">
+<div class="card reveal">
+<h2>Network</h2>
+<p>Morbi eleifend elit nec massa tincidunt, sit amet volutpat lorem pellentesque.</p>
+</div>
 
-<h2>Chapter Six</h2>
-
-<p>
-Ut luctus, metus ac posuere tincidunt,
-dolor lacus efficitur massa, eget maximus
-ligula elit nec justo. Duis eget ligula
-sed sapien tincidunt suscipit.
-</p>
+<div class="card reveal">
+<h2>Future</h2>
+<p>Praesent feugiat augue vel felis dictum, at facilisis erat hendrerit. Integer tincidunt.</p>
+</div>
 
 </div>
 
 </section>
 
-</main>
-
 <footer>
 
 <h3>Nicholas Van-Orton</h3>
 
-<p>
+<a href="mailto:contact@delaunaybook.us">contact@delaunaybook.us</a>
 
-<a href="mailto:contact@delaunaybook.us">
-contact@delaunaybook.us
-</a>
+<br>
 
-</p>
-
-<p>
-
-<a href="https://identity.nvo987.us">
-did:web:identity.nvo987.us
-</a>
-
-</p>
-
-<p style="margin-top:20px;color:#bfa75a;letter-spacing:2px;">
-
-© 2026 Delaunay Book · Premium Edition
-
-</p>
+<a href="https://identity.nvo987.us">did:web:identity.nvo987.us</a>
 
 </footer>
 
 <script>
 
-const observer=new IntersectionObserver(entries=>{
+const io=new IntersectionObserver(e=>{
 
-entries.forEach(entry=>{
+e.forEach(x=>{
 
-if(entry.isIntersecting){
+if(x.isIntersecting){
 
-entry.target.classList.add("visible");
+x.target.classList.add("show");
 
 }
 
 });
 
-},{
-threshold:0.15
-});
+},{threshold:.15});
 
-document.querySelectorAll(".fade").forEach(card=>{
-
-observer.observe(card);
-
-});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 
 </script>
 
