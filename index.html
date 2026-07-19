@@ -4,17 +4,13 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <title>
-Delaunay Book · Premium Digital Edition
+DELAUNAY BOOK · Premium Digital Edition
 </title>
 
-
 <meta name="description" content="Delaunay Book · Premium Digital Edition">
-
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,23 +19,22 @@ Delaunay Book · Premium Digital Edition
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 
-
 <style>
 
 
 :root{
 
---black:#030303;
+--background:#050505;
 
---gold:#b8944b;
+--gold:#b99752;
 
---gold-light:#ead59a;
+--gold-light:#e6d29a;
 
---ivory:#eee7d8;
+--white:#f1eadb;
 
---soft:#a59d8d;
+--gray:#9d9586;
 
---line:rgba(184,148,75,.30);
+--line:rgba(185,151,82,.28);
 
 }
 
@@ -67,9 +62,9 @@ scroll-behavior:smooth;
 
 body{
 
-background:var(--black);
+background:var(--background);
 
-color:var(--ivory);
+color:var(--white);
 
 font-family:"Inter",sans-serif;
 
@@ -79,7 +74,7 @@ overflow-x:hidden;
 
 
 
-body::before{
+body:before{
 
 content:"";
 
@@ -87,15 +82,11 @@ position:fixed;
 
 inset:0;
 
+background:
+
+radial-gradient(circle at center,rgba(255,255,255,.04),transparent 45%);
+
 pointer-events:none;
-
-opacity:.025;
-
-background-image:
-
-radial-gradient(circle,#fff 0.6px,transparent 0.7px);
-
-background-size:80px 80px;
 
 }
 
@@ -114,7 +105,7 @@ align-items:center;
 
 justify-content:center;
 
-padding:40px 25px;
+padding:30px;
 
 }
 
@@ -132,7 +123,7 @@ text-align:center;
 
 
 
-.hero-label{
+.hero-caption{
 
 font-size:11px;
 
@@ -140,21 +131,21 @@ letter-spacing:14px;
 
 color:var(--gold);
 
-margin-bottom:90px;
+margin-bottom:100px;
 
 }
 
 
 
-.brand{
+.logo{
 
 font-family:"Cormorant Garamond",serif;
 
 font-weight:300;
 
-font-size:clamp(75px,12vw,180px);
+font-size:clamp(80px,13vw,200px);
 
-letter-spacing:22px;
+letter-spacing:25px;
 
 line-height:.8;
 
@@ -162,13 +153,13 @@ line-height:.8;
 
 
 
-.brand span{
+.logo span{
 
 display:block;
 
-margin-top:100px;
+margin-top:110px;
 
-letter-spacing:60px;
+letter-spacing:65px;
 
 color:var(--gold-light);
 
@@ -178,9 +169,11 @@ color:var(--gold-light);
 
 .hero-divider{
 
-width:150px;
+width:160px;
 
 height:1px;
+
+margin:100px auto;
 
 background:linear-gradient(
 
@@ -194,8 +187,6 @@ transparent
 
 );
 
-margin:95px auto;
-
 }
 
 
@@ -204,28 +195,26 @@ margin:95px auto;
 
 font-family:"Cormorant Garamond",serif;
 
-font-weight:300;
+font-size:36px;
 
-font-size:34px;
+font-weight:300;
 
 line-height:1.6;
 
-max-width:850px;
+max-width:900px;
 
 margin:auto;
 
-color:#d8cfbe;
+color:var(--gold-light);
 
 }
 
 
 
+/* MAIN */
 
 
-/* ARCHIVE CONTAINER */
-
-
-.archive{
+.container{
 
 max-width:1400px;
 
@@ -237,21 +226,13 @@ padding:120px 8vw;
 
 
 
-.archive-heading{
-
-margin-bottom:150px;
-
-}
-
-
-
-.archive-heading h2{
+.archive-title{
 
 font-family:"Cormorant Garamond",serif;
 
-font-weight:300;
+font-size:100px;
 
-font-size:96px;
+font-weight:300;
 
 color:var(--gold-light);
 
@@ -259,9 +240,9 @@ color:var(--gold-light);
 
 
 
-.archive-heading p{
+.archive-subtitle{
 
-margin-top:30px;
+margin-top:25px;
 
 font-size:11px;
 
@@ -270,17 +251,15 @@ letter-spacing:10px;
 color:#777;
 
 }
+  <style>
 
 
+/* EDITORIAL SECTIONS */
 
 
+.editorial{
 
-/* PREMIUM CHAPTER BASE */
-
-
-.premium-chapter{
-
-padding:120px 0;
+padding:140px 0;
 
 border-top:1px solid var(--line);
 
@@ -288,11 +267,19 @@ border-top:1px solid var(--line);
 
 
 
-.chapter-label{
+.editorial-header{
+
+max-width:1100px;
+
+}
+
+
+
+.editorial-number{
 
 font-size:11px;
 
-letter-spacing:8px;
+letter-spacing:10px;
 
 color:var(--gold);
 
@@ -302,17 +289,15 @@ margin-bottom:45px;
 
 
 
-.chapter-title{
+.editorial-title{
 
 font-family:"Cormorant Garamond",serif;
 
 font-weight:300;
 
-font-size:clamp(48px,6vw,90px);
+font-size:clamp(55px,7vw,105px);
 
-line-height:1.05;
-
-max-width:1150px;
+line-height:1.02;
 
 color:var(--gold-light);
 
@@ -320,11 +305,11 @@ color:var(--gold-light);
 
 
 
-.chapter-intro{
+.editorial-text{
 
 margin-top:45px;
 
-max-width:800px;
+max-width:760px;
 
 font-size:20px;
 
@@ -332,58 +317,56 @@ line-height:2;
 
 font-weight:300;
 
-color:var(--soft);
+color:var(--gray);
 
 }
-  <style>
 
 
-/* PREMIUM INFORMATION PANEL */
 
 
-.archive-panel{
 
-margin-top:80px;
+/* FEATURE SPLIT */
+
+
+.feature{
 
 display:grid;
 
-grid-template-columns:1.4fr .8fr;
+grid-template-columns:1fr 1fr;
 
-gap:70px;
+gap:100px;
 
-align-items:start;
+align-items:center;
+
+margin-top:100px;
 
 }
 
 
 
-.editorial-text{
+.feature-title{
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:32px;
+font-size:55px;
 
 font-weight:300;
 
-line-height:1.6;
+line-height:1.2;
 
-color:var(--ivory);
+color:var(--white);
 
 }
 
 
 
-.editorial-small{
+.feature-content{
 
-margin-top:35px;
+font-size:18px;
 
-font-size:17px;
+line-height:2;
 
-line-height:1.9;
-
-color:var(--soft);
-
-font-weight:300;
+color:var(--gray);
 
 }
 
@@ -394,19 +377,19 @@ font-weight:300;
 
 .certificate{
 
-border-left:1px solid var(--line);
+margin-top:100px;
 
-padding-left:45px;
+padding:60px 0;
 
-}
-
-
-
-.certificate-item{
-
-padding:28px 0;
+border-top:1px solid var(--line);
 
 border-bottom:1px solid var(--line);
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:80px;
 
 }
 
@@ -418,11 +401,11 @@ display:block;
 
 font-size:10px;
 
-letter-spacing:6px;
+letter-spacing:7px;
 
 color:var(--gold);
 
-margin-bottom:18px;
+margin-bottom:20px;
 
 }
 
@@ -430,25 +413,23 @@ margin-bottom:18px;
 
 .certificate-value{
 
-font-size:16px;
+font-size:18px;
 
 letter-spacing:3px;
-
-color:var(--ivory);
 
 }
 
 
 
-.certificate-hash{
+.hash{
 
 font-family:"Courier New",monospace;
 
-font-size:13px;
+font-size:14px;
 
-line-height:2.2;
+line-height:2.4;
 
-letter-spacing:3px;
+letter-spacing:4px;
 
 color:var(--gold-light);
 
@@ -459,11 +440,11 @@ color:var(--gold-light);
 /* ACCESS */
 
 
-.archive-access{
+.access{
 
 display:flex;
 
-gap:30px;
+gap:35px;
 
 margin-top:70px;
 
@@ -471,7 +452,17 @@ margin-top:70px;
 
 
 
-.archive-access a{
+.access a{
+
+text-decoration:none;
+
+color:var(--gold-light);
+
+border:1px solid var(--line);
+
+width:190px;
+
+height:65px;
 
 display:flex;
 
@@ -479,78 +470,19 @@ align-items:center;
 
 justify-content:center;
 
-width:170px;
-
-height:60px;
-
-border:1px solid var(--line);
-
-text-decoration:none;
-
-color:var(--gold-light);
-
 font-size:14px;
 
-letter-spacing:6px;
+letter-spacing:7px;
 
-transition:.5s ease;
-
-}
-
-
-
-.archive-access a:hover{
-
-background:rgba(184,148,75,.10);
+transition:.4s;
 
 }
 
 
 
+.access a:hover{
 
-
-/* SECONDARY CHAPTER */
-
-
-.premium-feature{
-
-margin:160px 0;
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:90px;
-
-}
-
-
-
-.feature-title{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:70px;
-
-font-weight:300;
-
-line-height:1.1;
-
-color:var(--gold-light);
-
-}
-
-
-
-.feature-text{
-
-align-self:end;
-
-font-size:18px;
-
-line-height:2;
-
-color:var(--soft);
+background:rgba(185,151,82,.12);
 
 }
 
@@ -567,7 +499,7 @@ border-top:1px solid var(--line);
 
 text-align:center;
 
-padding:130px 25px 90px;
+padding:130px 25px;
 
 }
 
@@ -577,13 +509,11 @@ padding:130px 25px 90px;
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:58px;
-
 font-weight:300;
 
-color:var(--gold-light);
+font-size:56px;
 
-margin-bottom:45px;
+color:var(--gold-light);
 
 }
 
@@ -593,27 +523,27 @@ footer a{
 
 display:block;
 
-text-decoration:none;
+margin:25px;
 
 font-size:15px;
 
 letter-spacing:4px;
 
-color:var(--ivory);
+color:var(--white);
 
-margin:22px;
+text-decoration:none;
 
 }
 
 
 
-.footer-mark{
+.footer-note{
 
-margin-top:80px;
+margin-top:70px;
 
 font-size:10px;
 
-letter-spacing:10px;
+letter-spacing:12px;
 
 color:#777;
 
@@ -621,12 +551,10 @@ color:#777;
 
 
 
-
-
 /* ANIMATION */
 
 
-.fade{
+.reveal{
 
 opacity:0;
 
@@ -637,8 +565,7 @@ transition:1.2s ease;
 }
 
 
-
-.fade.visible{
+.reveal.active{
 
 opacity:1;
 
@@ -656,17 +583,19 @@ transform:none;
 @media(max-width:800px){
 
 
-.hero-label{
+.hero-caption{
 
 letter-spacing:6px;
+
+margin-bottom:55px;
 
 }
 
 
 
-.brand{
+.logo{
 
-font-size:58px;
+font-size:60px;
 
 letter-spacing:8px;
 
@@ -674,11 +603,11 @@ letter-spacing:8px;
 
 
 
-.brand span{
+.logo span{
 
 margin-top:55px;
 
-letter-spacing:18px;
+letter-spacing:20px;
 
 }
 
@@ -686,13 +615,13 @@ letter-spacing:18px;
 
 .hero-description{
 
-font-size:24px;
+font-size:25px;
 
 }
 
 
 
-.archive{
+.container{
 
 padding:70px 22px;
 
@@ -700,7 +629,7 @@ padding:70px 22px;
 
 
 
-.archive-heading h2{
+.archive-title{
 
 font-size:55px;
 
@@ -708,23 +637,23 @@ font-size:55px;
 
 
 
-.premium-chapter{
+.editorial{
 
-padding:70px 0;
-
-}
-
-
-
-.chapter-title{
-
-font-size:42px;
+padding:80px 0;
 
 }
 
 
 
-.chapter-intro{
+.editorial-title{
+
+font-size:44px;
+
+}
+
+
+
+.editorial-text{
 
 font-size:17px;
 
@@ -732,11 +661,19 @@ font-size:17px;
 
 
 
-.archive-panel{
+.feature{
 
 grid-template-columns:1fr;
 
-gap:45px;
+gap:40px;
+
+}
+
+
+
+.feature-title{
+
+font-size:42px;
 
 }
 
@@ -744,17 +681,15 @@ gap:45px;
 
 .certificate{
 
-border-left:none;
+grid-template-columns:1fr;
 
-border-top:1px solid var(--line);
-
-padding:35px 0 0;
+gap:40px;
 
 }
 
 
 
-.archive-access{
+.access{
 
 gap:15px;
 
@@ -762,7 +697,7 @@ gap:15px;
 
 
 
-.archive-access a{
+.access a{
 
 width:50%;
 
@@ -771,26 +706,6 @@ height:55px;
 font-size:12px;
 
 letter-spacing:4px;
-
-}
-
-
-
-.premium-feature{
-
-grid-template-columns:1fr;
-
-gap:35px;
-
-margin:90px 0;
-
-}
-
-
-
-.feature-title{
-
-font-size:45px;
 
 }
 
@@ -815,6 +730,7 @@ word-break:break-word;
 }
 
 
+
 }
 
 
@@ -827,20 +743,22 @@ word-break:break-word;
 <body>
 
 
+
 <section class="hero">
 
 
-<div class="hero-inner fade">
+<div class="hero-inner reveal">
 
 
-<div class="hero-label">
+<div class="hero-caption">
 
 PRIVATE DIGITAL ARCHIVE
 
 </div>
 
 
-<h1 class="brand">
+
+<h1 class="logo">
 
 DELAUNAY
 
@@ -853,7 +771,9 @@ BOOK
 </h1>
 
 
+
 <div class="hero-divider"></div>
+
 
 
 <p class="hero-description">
@@ -870,20 +790,20 @@ Color as a Generative Principle in the Work of Sonia Delaunay
 
 
 
-<main class="archive">
+<main class="container">
 
 
-<header class="archive-heading fade">
+<header class="reveal">
 
 
-<h2>
+<h2 class="archive-title">
 
 The Archive
 
 </h2>
 
 
-<p>
+<p class="archive-subtitle">
 
 PREMIUM DIGITAL EDITION
 
@@ -891,58 +811,67 @@ PREMIUM DIGITAL EDITION
 
 
 </header>
-<section class="premium-chapter fade">
+<section class="editorial reveal">
 
 
-<div class="chapter-label">
+<div class="editorial-header">
+
+
+<div class="editorial-number">
 
 ARCHIVE · 01
 
 </div>
 
 
-<h2 class="chapter-title">
 
-Color as a Generative Principle in the Work of Sonia Delaunay
+<h2 class="editorial-title">
+
+Color as a Generative Principle
+<br>
+in the Work of Sonia Delaunay
 
 </h2>
 
 
 
-<p class="chapter-intro">
+<p class="editorial-text">
 
-A digital scholarly edition exploring the relationship
-between chromatic movement, visual rhythm and
-artistic structure.
+A scholarly digital edition exploring the
+relationship between color, movement and
+artistic structure. The work examines how
+chromatic interaction becomes a creative
+principle rather than a decorative element.
 
 </p>
 
-
-
-
-<div class="archive-panel">
-
-
-<div>
-
-
-<div class="editorial-text">
-
-Color is not a surface element.
-It becomes an active force that creates
-movement, perception and harmony.
 
 </div>
 
 
 
-<p class="editorial-small">
 
-This edition examines the artistic principles
-behind simultaneous contrast and the evolution
-of modern color composition.
+<div class="feature">
 
-</p>
+
+<div class="feature-title">
+
+The language of color
+as a living structure.
+
+</div>
+
+
+
+<div class="feature-content">
+
+Color creates rhythm, perception and
+emotional balance. This archive presents
+the artistic research through a refined
+digital publication format designed for
+long-term preservation.
+
+</div>
 
 
 </div>
@@ -953,7 +882,7 @@ of modern color composition.
 <div class="certificate">
 
 
-<div class="certificate-item">
+<div>
 
 
 <span class="certificate-label">
@@ -975,7 +904,7 @@ xxxxxxxxx
 
 
 
-<div class="certificate-item">
+<div>
 
 
 <span class="certificate-label">
@@ -985,7 +914,7 @@ SHA-256
 </span>
 
 
-<div class="certificate-hash">
+<div class="hash">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -996,16 +925,12 @@ xxxxxxxxxxxxxxxx
 </div>
 
 
-
-</div>
-
-
 </div>
 
 
 
 
-<div class="archive-access">
+<div class="access">
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
@@ -1033,43 +958,14 @@ BOOK
 
 
 
-<section class="premium-feature fade">
+
+<section class="editorial reveal">
 
 
-<div class="feature-title">
-
-The Simultaneous Language
-of Color and Movement
-
-</div>
+<div class="editorial-header">
 
 
-
-<div class="feature-text">
-
-An exploration of optical interaction,
-balance and rhythm where color becomes
-a structural language of artistic expression.
-
-<br><br>
-
-The archive presents the research through
-a refined digital publication format.
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<section class="premium-chapter fade">
-
-
-<div class="chapter-label">
+<div class="editorial-number">
 
 ARCHIVE · 02
 
@@ -1077,47 +973,48 @@ ARCHIVE · 02
 
 
 
-<h2 class="chapter-title">
+<h2 class="editorial-title">
 
-Chromatic Rhythm as Visual Architecture
+The Simultaneous Language
+of Color and Movement
 
 </h2>
 
 
 
-<p class="chapter-intro">
+<p class="editorial-text">
 
-A study of geometric relationships,
-emotional perception and the architectural
-qualities of abstract composition.
+An exploration of optical interaction,
+visual harmony and the dynamic principles
+that transformed modern artistic expression.
 
 </p>
 
-
-
-
-<div class="archive-panel">
-
-
-<div>
-
-
-<div class="editorial-text">
-
-Geometry and color establish
-a dialogue between order and emotion.
 
 </div>
 
 
 
-<p class="editorial-small">
 
-The chapter explores the transformation
-of visual elements into a dynamic artistic
-system.
+<div class="feature">
 
-</p>
+
+<div class="feature-title">
+
+Movement becomes visible
+through chromatic balance.
+
+</div>
+
+
+
+<div class="feature-content">
+
+The archive investigates the relationship
+between geometry, perception and the
+emotional qualities of abstract composition.
+
+</div>
 
 
 </div>
@@ -1128,7 +1025,7 @@ system.
 <div class="certificate">
 
 
-<div class="certificate-item">
+<div>
 
 
 <span class="certificate-label">
@@ -1150,7 +1047,7 @@ xxxxxxxxx
 
 
 
-<div class="certificate-item">
+<div>
 
 
 <span class="certificate-label">
@@ -1160,7 +1057,7 @@ SHA-256
 </span>
 
 
-<div class="certificate-hash">
+<div class="hash">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -1171,16 +1068,12 @@ xxxxxxxxxxxxxxxx
 </div>
 
 
-
-</div>
-
-
 </div>
 
 
 
 
-<div class="archive-access">
+<div class="access">
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
@@ -1202,43 +1095,13 @@ BOOK
 
 
 </section>
-<section class="premium-feature fade">
+<section class="editorial reveal">
 
 
-<div class="feature-title">
-
-Geometry, Emotion and the Evolution of Abstract Vision
-
-</div>
+<div class="editorial-header">
 
 
-
-<div class="feature-text">
-
-A research perspective on the connection
-between mathematical structure, visual balance
-and the emotional dimension of abstraction.
-
-<br><br>
-
-The archive preserves the relationship between
-historical artistic innovation and contemporary
-digital presentation.
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<section class="premium-chapter fade">
-
-
-<div class="chapter-label">
+<div class="editorial-number">
 
 ARCHIVE · 03
 
@@ -1246,47 +1109,53 @@ ARCHIVE · 03
 
 
 
-<h2 class="chapter-title">
+<h2 class="editorial-title">
 
-The Digital Preservation of Artistic Heritage
+Chromatic Rhythm
+as Visual Architecture
 
 </h2>
 
 
 
-<p class="chapter-intro">
+<p class="editorial-text">
 
-A contemporary archival approach dedicated
-to protecting, verifying and presenting
-cultural knowledge through digital identity.
+A study of geometric relationships,
+visual balance and the architectural
+qualities of abstract composition.
 
 </p>
 
-
-
-
-<div class="archive-panel">
-
-
-<div>
-
-
-<div class="editorial-text">
-
-Preservation transforms artistic heritage
-into a permanent digital presence.
 
 </div>
 
 
 
-<p class="editorial-small">
 
-Every element of the edition is structured
-for authenticity, verification and long-term
-accessibility.
+<div class="feature">
 
-</p>
+
+<div class="feature-title">
+
+Structure and emotion
+inside the same visual space.
+
+</div>
+
+
+
+<div class="feature-content">
+
+The archive explores how color and form
+create a unified language where movement,
+order and expression coexist.
+
+<br><br>
+
+Each element is preserved as part of a
+complete digital scholarly edition.
+
+</div>
 
 
 </div>
@@ -1297,7 +1166,7 @@ accessibility.
 <div class="certificate">
 
 
-<div class="certificate-item">
+<div>
 
 
 <span class="certificate-label">
@@ -1318,8 +1187,7 @@ xxxxxxxxx
 
 
 
-
-<div class="certificate-item">
+<div>
 
 
 <span class="certificate-label">
@@ -1329,7 +1197,7 @@ SHA-256
 </span>
 
 
-<div class="certificate-hash">
+<div class="hash">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -1340,16 +1208,12 @@ xxxxxxxxxxxxxxxx
 </div>
 
 
-
-</div>
-
-
 </div>
 
 
 
 
-<div class="archive-access">
+<div class="access">
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
@@ -1377,37 +1241,14 @@ BOOK
 
 
 
-<section class="premium-feature fade">
+
+<section class="editorial reveal">
 
 
-<div class="feature-title">
-
-A Contemporary Legacy
-of Color and Innovation
-
-</div>
+<div class="editorial-header">
 
 
-
-<div class="feature-text">
-
-The final archive section connects
-historical artistic principles with a
-future-oriented digital edition.
-
-<br><br>
-
-A meeting point between creativity,
-identity and technological preservation.
-
-</div>
-
-
-</section>
-<section class="premium-chapter fade">
-
-
-<div class="chapter-label">
+<div class="editorial-number">
 
 ARCHIVE · 04
 
@@ -1415,48 +1256,54 @@ ARCHIVE · 04
 
 
 
-<h2 class="chapter-title">
+<h2 class="editorial-title">
 
-The Future Language of Artistic Identity
+Geometry, Emotion and
+the Evolution of Abstract Vision
 
 </h2>
 
 
 
-<p class="chapter-intro">
+<p class="editorial-text">
 
-A closing research section dedicated to the
-continuation of artistic thought through
-digital archives and verified editions.
+A curated research chapter examining
+the connection between mathematical
+structure, artistic innovation and
+human perception.
 
 </p>
 
-
-
-
-<div class="archive-panel">
-
-
-<div>
-
-
-<div class="editorial-text">
-
-An artwork does not end with its creation.
-Its meaning continues through preservation,
-interpretation and connection.
 
 </div>
 
 
 
-<p class="editorial-small">
 
-The Delaunay Book edition represents a bridge
-between historical knowledge and contemporary
-digital publication.
+<div class="feature">
 
-</p>
+
+<div class="feature-title">
+
+From geometry
+to visual experience.
+
+</div>
+
+
+
+<div class="feature-content">
+
+Abstract vision is presented as a dialogue
+between precision and emotion, creating
+a timeless artistic vocabulary.
+
+<br><br>
+
+The digital edition preserves this research
+through verified archival information.
+
+</div>
 
 
 </div>
@@ -1467,7 +1314,7 @@ digital publication.
 <div class="certificate">
 
 
-<div class="certificate-item">
+<div>
 
 
 <span class="certificate-label">
@@ -1488,8 +1335,7 @@ xxxxxxxxx
 
 
 
-
-<div class="certificate-item">
+<div>
 
 
 <span class="certificate-label">
@@ -1499,7 +1345,7 @@ SHA-256
 </span>
 
 
-<div class="certificate-hash">
+<div class="hash">
 
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
@@ -1510,6 +1356,94 @@ xxxxxxxxxxxxxxxx
 </div>
 
 
+</div>
+
+
+
+
+<div class="access">
+
+
+<a href="#" target="_blank" rel="noopener noreferrer">
+
+DOI
+
+</a>
+
+
+<a href="#" target="_blank" rel="noopener noreferrer">
+
+BOOK
+
+</a>
+
+
+</div>
+
+
+
+</section>
+<section class="editorial reveal">
+
+
+<div class="editorial-header">
+
+
+<div class="editorial-number">
+
+ARCHIVE · 05
+
+</div>
+
+
+
+<h2 class="editorial-title">
+
+The Digital Preservation
+of Artistic Heritage
+
+</h2>
+
+
+
+<p class="editorial-text">
+
+A contemporary archival approach dedicated
+to protecting, verifying and presenting
+cultural knowledge through advanced
+digital documentation.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="feature">
+
+
+<div class="feature-title">
+
+Preserving history
+through digital identity.
+
+</div>
+
+
+
+<div class="feature-content">
+
+The edition connects traditional artistic
+research with modern digital preservation
+methods, creating a permanent reference
+for future exploration.
+
+<br><br>
+
+Authenticity, structure and accessibility
+form the foundation of this archive.
 
 </div>
 
@@ -1519,7 +1453,57 @@ xxxxxxxxxxxxxxxx
 
 
 
-<div class="archive-access">
+<div class="certificate">
+
+
+<div>
+
+
+<span class="certificate-label">
+
+ISBN
+
+</span>
+
+
+<div class="certificate-value">
+
+xxxxxxxxx
+
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
+<span class="certificate-label">
+
+SHA-256
+
+</span>
+
+
+<div class="hash">
+
+xxxxxxxxxxxxxxxx<br>
+xxxxxxxxxxxxxxxx
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="access">
 
 
 <a href="#" target="_blank" rel="noopener noreferrer">
@@ -1548,33 +1532,143 @@ BOOK
 
 
 
-<section class="premium-feature fade">
+<section class="editorial reveal">
+
+
+<div class="editorial-header">
+
+
+<div class="editorial-number">
+
+ARCHIVE · 06
+
+</div>
+
+
+
+<h2 class="editorial-title">
+
+A Contemporary Legacy
+of Color and Innovation
+
+</h2>
+
+
+
+<p class="editorial-text">
+
+The final archive chapter connects historical
+artistic principles with future-oriented
+digital identity and preservation.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="feature">
 
 
 <div class="feature-title">
 
-Digital Edition
-
-<br>
-
-Sonia Delaunay Archive
+A timeless dialogue
+between art and technology.
 
 </div>
 
 
 
-<div class="feature-text">
+<div class="feature-content">
 
-A refined presentation of artistic research,
-metadata and verified digital documentation.
+The Delaunay Book represents a refined
+digital publication where artistic heritage,
+research and verified information meet.
 
 <br><br>
 
-Designed as a premium private publication
-with emphasis on clarity, authenticity
-and timeless visual language.
+A premium edition created for clarity,
+continuity and lasting presence.
 
 </div>
+
+
+</div>
+
+
+
+
+<div class="certificate">
+
+
+<div>
+
+
+<span class="certificate-label">
+
+ISBN
+
+</span>
+
+
+<div class="certificate-value">
+
+xxxxxxxxx
+
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
+<span class="certificate-label">
+
+SHA-256
+
+</span>
+
+
+<div class="hash">
+
+xxxxxxxxxxxxxxxx<br>
+xxxxxxxxxxxxxxxx
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="access">
+
+
+<a href="#" target="_blank" rel="noopener noreferrer">
+
+DOI
+
+</a>
+
+
+<a href="#" target="_blank" rel="noopener noreferrer">
+
+BOOK
+
+</a>
+
+
+</div>
+
 
 
 </section>
@@ -1582,7 +1676,9 @@ and timeless visual language.
 
 
 
-<footer class="fade">
+
+
+<footer class="reveal">
 
 
 <h3 class="footer-name">
@@ -1602,6 +1698,7 @@ contact@delaunaybook.us
 
 
 
+
 <a href="https://identity.nvo987.us"
 target="_blank"
 rel="noopener noreferrer">
@@ -1613,14 +1710,16 @@ did:web:identity.nvo987.us
 
 
 
-<div class="footer-mark">
+<div class="footer-note">
 
 DELAUNAY BOOK · PREMIUM DIGITAL EDITION
 
 </div>
 
 
+
 </footer>
+
 
 
 
@@ -1634,12 +1733,13 @@ const observer = new IntersectionObserver(
 
 (entries)=>{
 
+
 entries.forEach((entry)=>{
 
 
 if(entry.isIntersecting){
 
-entry.target.classList.add("visible");
+entry.target.classList.add("active");
 
 observer.unobserve(entry.target);
 
@@ -1648,28 +1748,33 @@ observer.unobserve(entry.target);
 
 });
 
+
 },
+
 
 {
 
-threshold:0.12
+threshold:0.15
 
 }
+
 
 );
 
 
 
 document
-.querySelectorAll(".fade")
-.forEach((element)=>{
+.querySelectorAll(".reveal")
+.forEach((item)=>{
 
-observer.observe(element);
+observer.observe(item);
 
 });
 
 
+
 </script>
+
 
 
 
