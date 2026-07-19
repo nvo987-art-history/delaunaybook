@@ -3,48 +3,49 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Delaunay Book</title>
+<title>Delaunay Book — Nicholas Van-Orton</title>
 
-<meta name="description" content="Delaunay Book — Nicholas Van-Orton">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Manrope:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
 
 <style>
 
+:root{
+
+--black:#020202;
+--gold:#b89442;
+--gold-light:#ead89a;
+--cream:#eee8dc;
+
+}
+
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
-
-:root{
-
---black:#000000;
---gold:#b99a45;
---gold-soft:#e4cd8a;
---white:#f2eee5;
 
 }
 
 
 body{
 
-background:var(--black);
+background:#020202;
 
-color:var(--white);
+color:var(--cream);
 
-font-family:Manrope,sans-serif;
+font-family:Inter,sans-serif;
 
 overflow-x:hidden;
 
 }
 
 
-/* minimal texture */
+/* luxury grain */
 
-body:after{
+body:before{
 
 content:"";
 
@@ -52,17 +53,13 @@ position:fixed;
 
 inset:0;
 
+opacity:.09;
+
 pointer-events:none;
 
-background:
-radial-gradient(
-ellipse at center,
-rgba(255,255,255,.04),
-transparent 55%
-);
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 
 }
-
 
 
 /* HERO */
@@ -70,7 +67,7 @@ transparent 55%
 
 .hero{
 
-height:100vh;
+min-height:100vh;
 
 display:flex;
 
@@ -78,45 +75,65 @@ align-items:center;
 
 justify-content:center;
 
-padding:40px;
+padding:30px;
 
 position:relative;
 
 }
 
 
-.side-mark{
+.hero:after{
+
+content:"";
 
 position:absolute;
 
-left:35px;
+width:450px;
 
-top:50%;
+height:450px;
 
-transform:rotate(-90deg);
+background:radial-gradient(circle,
+rgba(184,148,66,.15),
+transparent 70%);
 
-font-size:11px;
+animation:light 12s infinite alternate;
 
-letter-spacing:7px;
+}
 
-color:var(--gold);
+
+@keyframes light{
+
+from{
+
+transform:translate(-80px,-40px);
+
+}
+
+to{
+
+transform:translate(80px,40px);
+
+}
 
 }
 
 
 
-.hero-inner{
+.hero-content{
+
+position:relative;
+
+z-index:2;
 
 text-align:center;
 
-max-width:1000px;
-
 }
 
 
-.small-title{
 
-font-size:12px;
+.signature{
+
+font-size:11px;
 
 letter-spacing:12px;
 
@@ -129,11 +146,11 @@ margin-bottom:45px;
 
 .hero h1{
 
-font-family:"Playfair Display",serif;
+font-family:"Cormorant Garamond",serif;
 
-font-size:clamp(70px,14vw,180px);
+font-weight:300;
 
-font-weight:400;
+font-size:clamp(75px,14vw,190px);
 
 line-height:.82;
 
@@ -142,64 +159,59 @@ letter-spacing:-5px;
 }
 
 
+
 .hero h1 span{
 
 display:block;
 
-color:var(--gold-soft);
-
-}
-
-
-.description{
-
-margin:50px auto 0;
-
-max-width:520px;
-
-font-family:"Playfair Display",serif;
-
-font-size:24px;
-
-font-weight:400;
-
-line-height:1.7;
-
-color:#d8d2c5;
+color:var(--gold-light);
 
 }
 
 
 
-/* divider */
+.line{
 
-.divider{
+height:1px;
 
-width:1px;
-
-height:120px;
+width:100px;
 
 background:var(--gold);
 
-margin:70px auto;
-
-opacity:.6;
+margin:55px auto;
 
 }
 
 
 
-/* archive */
+.hero p{
 
+font-family:"Cormorant Garamond";
 
-.archive{
+font-size:28px;
 
-padding:100px 8vw;
+max-width:650px;
+
+line-height:1.6;
+
+color:#d2cbbb;
 
 }
 
 
-.archive-header{
+
+/* COLLECTION */
+
+
+.collection{
+
+padding:120px 8vw;
+
+}
+
+
+
+.heading{
 
 display:flex;
 
@@ -212,24 +224,24 @@ margin-bottom:100px;
 }
 
 
-.archive-header h2{
+.heading h2{
 
-font-family:"Playfair Display";
+font-family:"Cormorant Garamond";
 
-font-weight:400;
+font-size:75px;
 
-font-size:70px;
+font-weight:300;
 
-color:var(--gold);
+color:var(--gold-light);
 
 }
 
 
-.archive-header p{
+.heading span{
 
-font-size:12px;
+font-size:11px;
 
-letter-spacing:5px;
+letter-spacing:6px;
 
 color:#777;
 
@@ -237,44 +249,73 @@ color:#777;
 
 
 
-.entry{
+.chapter{
+
+position:relative;
 
 display:grid;
 
-grid-template-columns:120px 1fr;
+grid-template-columns:140px 1fr;
 
-gap:40px;
+padding:65px 0;
 
-padding:55px 0;
-
-border-top:1px solid rgba(185,154,69,.35);
+border-top:1px solid rgba(184,148,66,.35);
 
 }
 
 
-.entry:last-child{
+.chapter:last-child{
 
-border-bottom:1px solid rgba(185,154,69,.35);
+border-bottom:1px solid rgba(184,148,66,.35);
 
 }
 
 
-.number{
+.chapter:before{
 
-font-family:"Playfair Display";
+content:"";
 
-font-size:30px;
+position:absolute;
+
+left:0;
+
+top:0;
+
+height:1px;
+
+width:0;
+
+background:var(--gold-light);
+
+transition:.8s;
+
+}
+
+
+.chapter:hover:before{
+
+width:100%;
+
+}
+
+
+
+.index{
+
+font-family:"Cormorant Garamond";
+
+font-size:38px;
 
 color:var(--gold);
 
 }
 
 
-.entry h3{
+.chapter h3{
 
-font-family:"Playfair Display";
+font-family:"Cormorant Garamond";
 
-font-size:55px;
+font-size:62px;
 
 font-weight:400;
 
@@ -283,15 +324,90 @@ margin-bottom:20px;
 }
 
 
-.entry p{
 
-max-width:650px;
+.chapter p{
 
 font-size:18px;
 
-line-height:1.9;
+line-height:2;
 
-color:#c9c4b8;
+max-width:650px;
+
+color:#c7c1b5;
+
+font-weight:300;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer{
+
+padding:130px 25px;
+
+text-align:center;
+
+border-top:1px solid rgba(184,148,66,.3);
+
+}
+
+
+footer h3{
+
+font-family:"Cormorant Garamond";
+
+font-size:72px;
+
+font-weight:300;
+
+color:var(--gold-light);
+
+margin-bottom:40px;
+
+}
+
+
+
+footer a{
+
+display:block;
+
+margin:22px;
+
+font-size:16px;
+
+letter-spacing:3px;
+
+color:#ddd;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+
+
+footer a:hover{
+
+color:var(--gold-light);
+
+}
+
+
+
+.footer-mark{
+
+margin-top:70px;
+
+font-size:10px;
+
+letter-spacing:10px;
+
+color:#555;
 
 }
 
@@ -300,23 +416,15 @@ color:#c9c4b8;
 
 @media(max-width:700px){
 
+
 .hero{
 
-height:90vh;
-
-padding:25px;
+min-height:90vh;
 
 }
 
 
-.side-mark{
-
-display:none;
-
-}
-
-
-.small-title{
+.signature{
 
 letter-spacing:6px;
 
@@ -330,53 +438,63 @@ letter-spacing:-2px;
 }
 
 
-.description{
+.hero p{
 
-font-size:20px;
-
-}
-
-
-.archive{
-
-padding:60px 25px;
+font-size:22px;
 
 }
 
 
-.archive-header{
+.collection{
+
+padding:70px 25px;
+
+}
+
+
+.heading{
 
 display:block;
 
-}
-
-
-.archive-header h2{
-
-font-size:48px;
-
-margin-bottom:20px;
+margin-bottom:60px;
 
 }
 
 
-.entry{
+.heading h2{
+
+font-size:52px;
+
+}
+
+
+.chapter{
 
 grid-template-columns:1fr;
 
 gap:20px;
 
-}
-
-
-.entry h3{
-
-font-size:40px;
+padding:45px 0;
 
 }
 
 
+.chapter h3{
+
+font-size:45px;
+
 }
+
+
+footer h3{
+
+font-size:48px;
+
+}
+
+
+}
+
 
 </style>
 
@@ -388,16 +506,11 @@ font-size:40px;
 <section class="hero">
 
 
-<div class="side-mark">
-DELAUNAY BOOK
-</div>
+<div class="hero-content">
 
 
-<div class="hero-inner">
-
-
-<div class="small-title">
-PRIVATE DIGITAL ARCHIVE
+<div class="signature">
+PRIVATE ARCHIVE · EST. 2026
 </div>
 
 
@@ -407,12 +520,12 @@ DELAUNAY
 </h1>
 
 
-<div class="divider"></div>
+<div class="line"></div>
 
 
-<p class="description">
-A refined digital presence where identity,
-heritage and technology exist in harmony.
+<p>
+A timeless digital manuscript of identity,
+vision and legacy.
 </p>
 
 
@@ -420,208 +533,112 @@ heritage and technology exist in harmony.
 
 
 </section>
-<section class="archive">
 
-<div class="archive-header">
+
+
+<section class="collection">
+
+
+<div class="heading">
 
 <h2>
-Collection
+The Archive
 </h2>
 
-<p>
-SIX CHAPTERS · DIGITAL LEGACY
-</p>
+<span>
+SIX CHAPTERS
+</span>
 
 </div>
 
 
-<div class="entry">
-
-<div class="number">
-01
-</div>
-
+<div class="chapter">
+<div class="index">I</div>
 <div>
-
-<h3>
-Identity
-</h3>
-
+<h3>Identity</h3>
 <p>
-The foundation of a distinguished digital presence.
-A space created for authenticity, continuity and personal expression.
+The origin of a distinguished digital presence,
+crafted with precision and authenticity.
 </p>
-
+</div>
 </div>
 
-</div>
 
-
-
-<div class="entry">
-
-<div class="number">
-02
-</div>
-
+<div class="chapter">
+<div class="index">II</div>
 <div>
-
-<h3>
-Vision
-</h3>
-
+<h3>Vision</h3>
 <p>
-An artistic approach combining modern technology with timeless principles.
+A philosophy where technology follows timeless design.
 </p>
-
+</div>
 </div>
 
-</div>
 
-
-
-<div class="entry">
-
-<div class="number">
-03
-</div>
-
+<div class="chapter">
+<div class="index">III</div>
 <div>
-
-<h3>
-Legacy
-</h3>
-
+<h3>Legacy</h3>
 <p>
-A digital archive designed to preserve ideas, values and meaningful stories.
+Preserving ideas and values beyond generations.
 </p>
-
+</div>
 </div>
 
-</div>
 
-
-
-<div class="entry">
-
-<div class="number">
-04
-</div>
-
+<div class="chapter">
+<div class="index">IV</div>
 <div>
-
-<h3>
-Architecture
-</h3>
-
+<h3>Architecture</h3>
 <p>
-A carefully structured environment where design and technology meet.
+A structured environment built around elegance.
 </p>
-
+</div>
 </div>
 
-</div>
 
-
-
-<div class="entry">
-
-<div class="number">
-05
-</div>
-
+<div class="chapter">
+<div class="index">V</div>
 <div>
-
-<h3>
-Security
-</h3>
-
+<h3>Security</h3>
 <p>
-Privacy and trust as essential elements of a modern identity.
+Trust and privacy at the foundation of identity.
 </p>
-
+</div>
 </div>
 
-</div>
 
-
-
-<div class="entry">
-
-<div class="number">
-06
-</div>
-
+<div class="chapter">
+<div class="index">VI</div>
 <div>
-
-<h3>
-Future
-</h3>
-
+<h3>Future</h3>
 <p>
-An evolving digital expression built for the next generation.
+The next chapter of digital craftsmanship.
 </p>
-
 </div>
-
 </div>
 
 
 </section>
+<footer>
 
-
-
-<footer style="
-padding:120px 30px;
-text-align:center;
-border-top:1px solid rgba(185,154,69,.35);
-">
-
-
-<h3 style="
-font-family:'Playfair Display',serif;
-font-size:55px;
-font-weight:400;
-color:#e4cd8a;
-margin-bottom:35px;
-">
+<h3>
 Nicholas Van-Orton
 </h3>
 
 
-<a href="mailto:contact@delaunaybook.us"
-style="
-display:block;
-color:#f2eee5;
-text-decoration:none;
-font-size:18px;
-letter-spacing:3px;
-margin:18px;
-">
+<a href="mailto:contact@delaunaybook.us">
 contact@delaunaybook.us
 </a>
 
 
-<a href="https://identity.nvo987.us"
-style="
-display:block;
-color:#b99a45;
-text-decoration:none;
-font-size:16px;
-letter-spacing:3px;
-margin:18px;
-">
+<a href="https://identity.nvo987.us">
 did:web:identity.nvo987.us
 </a>
 
 
-<div style="
-margin-top:60px;
-font-size:11px;
-letter-spacing:8px;
-color:#666;
-">
-DELAUNAY BOOK · PREMIUM EDITION
+<div class="footer-mark">
+DELAUNAY BOOK · PREMIUM DIGITAL EDITION
 </div>
 
 
@@ -631,17 +648,23 @@ DELAUNAY BOOK · PREMIUM EDITION
 
 <script>
 
-const reveal=document.querySelectorAll(".entry");
+/* subtle reveal animation */
+
+const elements=document.querySelectorAll(
+".chapter,.hero-content,footer"
+);
+
 
 const observer=new IntersectionObserver(
-(items)=>{
+(entries)=>{
 
-items.forEach(item=>{
+entries.forEach(entry=>{
 
-if(item.isIntersecting){
+if(entry.isIntersecting){
 
-item.target.style.opacity="1";
-item.target.style.transform="translateY(0)";
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
 
 }
 
@@ -654,15 +677,55 @@ threshold:.15
 );
 
 
-reveal.forEach(item=>{
 
-item.style.opacity="0";
+elements.forEach(el=>{
 
-item.style.transform="translateY(40px)";
+el.style.opacity="0";
 
-item.style.transition="1s ease";
+el.style.transform="translateY(35px)";
 
-observer.observe(item);
+el.style.transition="1.2s cubic-bezier(.2,.7,.2,1)";
+
+observer.observe(el);
+
+});
+
+
+
+/* premium cursor light */
+
+const cursor=document.createElement("div");
+
+cursor.style.position="fixed";
+
+cursor.style.width="250px";
+
+cursor.style.height="250px";
+
+cursor.style.borderRadius="50%";
+
+cursor.style.pointerEvents="none";
+
+cursor.style.background=
+"radial-gradient(circle,rgba(234,216,154,.08),transparent 70%)";
+
+cursor.style.transform="translate(-50%,-50%)";
+
+cursor.style.zIndex="999";
+
+cursor.style.display="none";
+
+document.body.appendChild(cursor);
+
+
+
+window.addEventListener("mousemove",(e)=>{
+
+cursor.style.display="block";
+
+cursor.style.left=e.clientX+"px";
+
+cursor.style.top=e.clientY+"px";
 
 });
 
