@@ -8,10 +8,12 @@
 
 <title>Delaunay Book — Nicholas Van-Orton</title>
 
+<meta name="description" content="Delaunay Book private digital archive">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 
 <style>
@@ -19,10 +21,10 @@
 :root{
 
 --black:#020202;
---gold:#b9964a;
---gold-light:#ead89a;
---cream:#eee7d9;
---muted:#a9a293;
+--gold:#b8944a;
+--gold-light:#e7d39a;
+--cream:#eee8dc;
+--gray:#a8a193;
 
 }
 
@@ -56,7 +58,7 @@ overflow-x:hidden;
 }
 
 
-/* Premium texture */
+/* subtle luxury texture */
 
 body::before{
 
@@ -68,22 +70,22 @@ inset:0;
 
 pointer-events:none;
 
-opacity:.05;
+opacity:.04;
 
 background-image:
-radial-gradient(#fff 0.6px,transparent 0.6px);
+radial-gradient(#fff 0.7px,transparent .7px);
 
-background-size:75px 75px;
+background-size:80px 80px;
 
 }
 
 
-/* HERO */
 
+/* HERO */
 
 .hero{
 
-min-height:100vh;
+min-height:100svh;
 
 display:flex;
 
@@ -96,11 +98,13 @@ padding:40px 25px;
 }
 
 
-.hero-content{
+.hero-inner{
 
-text-align:center;
+width:100%;
 
 max-width:1200px;
+
+text-align:center;
 
 }
 
@@ -113,23 +117,22 @@ letter-spacing:14px;
 
 color:var(--gold);
 
-margin-bottom:80px;
+margin-bottom:90px;
 
 }
-
 
 
 .hero h1{
 
 font-family:"Cormorant Garamond",serif;
 
+font-size:clamp(70px,12vw,170px);
+
 font-weight:300;
 
-font-size:clamp(80px,13vw,180px);
+line-height:.9;
 
-line-height:1;
-
-letter-spacing:12px;
+letter-spacing:14px;
 
 }
 
@@ -138,46 +141,45 @@ letter-spacing:12px;
 
 display:block;
 
-margin-top:70px;
+margin-top:85px;
 
 color:var(--gold-light);
 
-letter-spacing:30px;
+letter-spacing:35px;
 
 }
 
 
 
-.hero-line{
+.gold-line{
+
+width:130px;
 
 height:1px;
 
-width:140px;
+background:var(--gold);
 
 margin:90px auto;
-
-background:linear-gradient(
-90deg,
-transparent,
-var(--gold),
-transparent
-);
 
 }
 
 
 
-.hero-text{
+.hero-description{
 
-font-family:"Cormorant Garamond";
+font-family:"Cormorant Garamond",serif;
 
 font-size:32px;
 
+line-height:1.6;
+
 font-weight:300;
 
-line-height:1.7;
+max-width:700px;
 
-color:#d8d0c1;
+margin:auto;
+
+color:#d6cfbf;
 
 }
 
@@ -192,20 +194,19 @@ max-width:1500px;
 
 margin:auto;
 
-padding:120px 8vw;
+padding:130px 8vw;
 
 }
 
 
-
-.archive-title{
+.archive-heading{
 
 margin-bottom:120px;
 
 }
 
 
-.archive-title h2{
+.archive-heading h2{
 
 font-family:"Cormorant Garamond";
 
@@ -218,14 +219,11 @@ color:var(--gold-light);
 }
 
 
-
-.archive-title span{
-
-display:block;
+.archive-heading p{
 
 margin-top:20px;
 
-font-size:11px;
+font-size:10px;
 
 letter-spacing:8px;
 
@@ -237,31 +235,38 @@ color:#777;
 
 .chapter{
 
-padding:80px 0;
-
-border-top:1px solid rgba(185,150,74,.35);
-
 display:grid;
 
 grid-template-columns:150px 1fr;
 
+padding:75px 0;
+
+border-top:1px solid rgba(184,148,74,.35);
+
+transition:.6s;
+
 }
 
+
+.chapter:last-child{
+
+border-bottom:1px solid rgba(184,148,74,.35);
+
+}
 
 
 .chapter-number{
 
 font-family:"Cormorant Garamond";
 
-font-size:45px;
+font-size:44px;
 
 color:var(--gold);
 
 }
 
 
-
-.chapter h3{
+.chapter-content h3{
 
 font-family:"Cormorant Garamond";
 
@@ -269,56 +274,53 @@ font-size:70px;
 
 font-weight:300;
 
-margin-bottom:30px;
+margin-bottom:25px;
 
 }
 
 
 
-.chapter p{
+.chapter-content p{
 
 font-size:18px;
+
+font-weight:300;
 
 line-height:2;
 
 max-width:700px;
 
-color:var(--muted);
-
-font-weight:300;
+color:var(--gray);
 
 }
 
 
 
-/* LINKS */
+/* premium links */
 
 
 .chapter-links{
 
 display:flex;
 
-gap:40px;
+gap:45px;
 
 margin-top:45px;
 
 }
 
 
-
 .chapter-links a{
 
-position:relative;
+color:var(--gold-light);
 
 font-size:11px;
 
 letter-spacing:5px;
 
-text-transform:uppercase;
-
-color:var(--gold-light);
-
 text-decoration:none;
+
+position:relative;
 
 padding-bottom:10px;
 
@@ -336,16 +338,15 @@ left:0;
 
 bottom:0;
 
-height:1px;
-
 width:0;
+
+height:1px;
 
 background:var(--gold-light);
 
-transition:.6s;
+transition:.5s;
 
 }
-
 
 
 .chapter-links a:hover::after{
@@ -361,14 +362,13 @@ width:100%;
 
 footer{
 
-border-top:1px solid rgba(185,150,74,.35);
+padding:150px 25px 90px;
 
-padding:140px 25px;
+border-top:1px solid rgba(184,148,74,.35);
 
 text-align:center;
 
 }
-
 
 
 footer h3{
@@ -377,43 +377,50 @@ font-family:"Cormorant Garamond";
 
 font-weight:300;
 
-font-size:80px;
+font-size:75px;
 
 color:var(--gold-light);
 
-margin-bottom:50px;
+margin-bottom:45px;
 
 }
-
 
 
 footer a{
 
 display:block;
 
-margin:22px;
+color:#ddd;
 
 text-decoration:none;
 
-color:#ddd;
+font-size:15px;
 
 letter-spacing:4px;
 
-font-size:15px;
+margin:22px;
+
+transition:.3s;
 
 }
 
+
+footer a:hover{
+
+color:var(--gold-light);
+
+}
 
 
 .footer-mark{
 
 margin-top:80px;
 
-font-size:10px;
+font-size:9px;
 
-letter-spacing:12px;
+letter-spacing:10px;
 
-color:#666;
+color:#555;
 
 }
 
@@ -426,7 +433,7 @@ color:#666;
 
 opacity:0;
 
-transform:translateY(40px);
+transform:translateY(35px);
 
 transition:1.2s ease;
 
@@ -451,55 +458,69 @@ transform:none;
 
 .hero{
 
-min-height:90vh;
+padding:35px 20px;
 
 }
 
 
 .eyebrow{
 
-letter-spacing:7px;
+letter-spacing:6px;
 
-margin-bottom:50px;
+margin-bottom:55px;
 
 }
 
 
 .hero h1{
 
-letter-spacing:5px;
+font-size:65px;
 
-font-size:75px;
+letter-spacing:5px;
 
 }
 
 
 .hero h1 span{
 
-margin-top:50px;
+margin-top:45px;
 
 letter-spacing:15px;
 
 }
 
 
-.hero-text{
+.gold-line{
 
-font-size:24px;
+margin:60px auto;
+
+}
+
+
+.hero-description{
+
+font-size:23px;
 
 }
 
 
 .archive{
 
-padding:80px 25px;
+padding:80px 22px;
 
 }
 
 
-.archive-title h2{
+.archive-heading{
 
-font-size:55px;
+margin-bottom:60px;
+
+}
+
+
+.archive-heading h2{
+
+font-size:50px;
 
 }
 
@@ -513,9 +534,27 @@ padding:55px 0;
 }
 
 
-.chapter h3{
+.chapter-number{
 
-font-size:45px;
+font-size:35px;
+
+margin-bottom:25px;
+
+}
+
+
+.chapter-content h3{
+
+font-size:44px;
+
+}
+
+
+.chapter-content p{
+
+font-size:16px;
+
+line-height:1.8;
 
 }
 
@@ -529,9 +568,79 @@ flex-wrap:wrap;
 }
 
 
+.chapter-links a{
+
+min-height:44px;
+
+display:flex;
+
+align-items:center;
+
+}
+
+
+footer{
+
+padding:90px 20px;
+
+}
+
+
 footer h3{
 
-font-size:50px;
+font-size:48px;
+
+}
+
+
+footer a{
+
+font-size:13px;
+
+letter-spacing:2px;
+
+word-break:break-word;
+
+}
+
+
+.footer-mark{
+
+letter-spacing:5px;
+
+}
+
+
+}
+
+
+@media(max-width:380px){
+
+
+.hero h1{
+
+font-size:56px;
+
+}
+
+
+.hero h1 span{
+
+letter-spacing:10px;
+
+}
+
+
+.chapter-content h3{
+
+font-size:38px;
+
+}
+
+
+footer h3{
+
+font-size:40px;
 
 }
 
@@ -550,7 +659,7 @@ font-size:50px;
 <section class="hero">
 
 
-<div class="hero-content reveal">
+<div class="hero-inner reveal">
 
 
 <div class="eyebrow">
@@ -559,7 +668,6 @@ PRIVATE DIGITAL ARCHIVE
 
 
 <h1>
-
 DELAUNAY
 
 <span>
@@ -569,54 +677,50 @@ BOOK
 </h1>
 
 
-<div class="hero-line"></div>
+<div class="gold-line"></div>
 
 
-<p class="hero-text">
-
+<p class="hero-description">
 A timeless digital manuscript of identity,
 vision and legacy.
-
 </p>
 
 
 </div>
 
-
 </section>
+
 
 
 <section class="archive">
 
 
-<div class="archive-title reveal">
+<div class="archive-heading reveal">
 
 <h2>
 The Archive
 </h2>
 
-<span>
+<p>
 SIX CHAPTERS
-</span>
+</p>
 
 </div>
+
+
+
 <div class="chapter reveal">
 
-<div class="chapter-number">
-I
-</div>
+<div class="chapter-number">I</div>
 
-<div>
+<div class="chapter-content">
 
-<h3>
-Identity
-</h3>
+<h3>Identity</h3>
 
 <p>
 The foundation of a distinguished digital presence,
-created with authenticity, precision and purpose.
+created with authenticity and purpose.
 </p>
-
 
 <div class="chapter-links">
 
@@ -638,21 +742,15 @@ Archive
 
 <div class="chapter reveal">
 
-<div class="chapter-number">
-II
-</div>
+<div class="chapter-number">II</div>
 
-<div>
+<div class="chapter-content">
 
-<h3>
-Vision
-</h3>
+<h3>Vision</h3>
 
 <p>
-A refined philosophy where technology follows
-timeless artistic direction.
+A refined philosophy where technology follows timeless design.
 </p>
-
 
 <div class="chapter-links">
 
@@ -674,21 +772,15 @@ Archive
 
 <div class="chapter reveal">
 
-<div class="chapter-number">
-III
-</div>
+<div class="chapter-number">III</div>
 
-<div>
+<div class="chapter-content">
 
-<h3>
-Legacy
-</h3>
+<h3>Legacy</h3>
 
 <p>
-A private digital manuscript preserving ideas,
-values and meaningful moments.
+Preserving values and ideas through a private digital archive.
 </p>
-
 
 <div class="chapter-links">
 
@@ -710,21 +802,15 @@ Archive
 
 <div class="chapter reveal">
 
-<div class="chapter-number">
-IV
-</div>
+<div class="chapter-number">IV</div>
 
-<div>
+<div class="chapter-content">
 
-<h3>
-Architecture
-</h3>
+<h3>Architecture</h3>
 
 <p>
-A structured environment combining elegance,
-clarity and modern digital craftsmanship.
+A carefully structured environment built around elegance.
 </p>
-
 
 <div class="chapter-links">
 
@@ -746,21 +832,15 @@ Archive
 
 <div class="chapter reveal">
 
-<div class="chapter-number">
-V
-</div>
+<div class="chapter-number">V</div>
 
-<div>
+<div class="chapter-content">
 
-<h3>
-Trust
-</h3>
+<h3>Trust</h3>
 
 <p>
-A foundation built around authenticity,
-privacy and a secure digital identity.
+Privacy and authenticity at the center of digital identity.
 </p>
-
 
 <div class="chapter-links">
 
@@ -782,21 +862,15 @@ Archive
 
 <div class="chapter reveal">
 
-<div class="chapter-number">
-VI
-</div>
+<div class="chapter-number">VI</div>
 
-<div>
+<div class="chapter-content">
 
-<h3>
-Future
-</h3>
+<h3>Future</h3>
 
 <p>
-The continuation of a digital masterpiece,
-designed for the next era.
+The continuation of a digital masterpiece.
 </p>
-
 
 <div class="chapter-links">
 
@@ -837,11 +911,8 @@ did:web:identity.nvo987.us
 </a>
 
 
-
 <div class="footer-mark">
-
-DELAUNAY BOOK · PREMIUM DIGITAL EDITION
-
+THE DELAUNAY ARCHIVE
 </div>
 
 
@@ -851,10 +922,9 @@ DELAUNAY BOOK · PREMIUM DIGITAL EDITION
 
 <script>
 
+const observer=new IntersectionObserver(
 
-const observer = new IntersectionObserver(
-
-(entries)=>{
+entries=>{
 
 entries.forEach(entry=>{
 
@@ -869,21 +939,15 @@ entry.target.classList.add("active");
 },
 
 {
-threshold:.15
+threshold:.12
 }
 
 );
 
 
-
 document
 .querySelectorAll(".reveal")
-.forEach(element=>{
-
-observer.observe(element);
-
-});
-
+.forEach(el=>observer.observe(el));
 
 
 </script>
@@ -891,4 +955,4 @@ observer.observe(element);
 
 </body>
 
-</html>
+  </html>
