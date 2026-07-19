@@ -23,7 +23,7 @@ DELAUNAY BOOK · Premium Digital Edition
 
 :root{
 
---background:#050505;
+--bg:#050505;
 --gold:#b99752;
 --gold-light:#e6d29a;
 --white:#f1eadb;
@@ -45,21 +45,25 @@ box-sizing:border-box;
 html{
 
 scroll-behavior:smooth;
+overflow-x:hidden;
 
 }
 
 
 body{
 
-background:var(--background);
+background:var(--bg);
 color:var(--white);
+
 font-family:"Inter",sans-serif;
+
 overflow-x:hidden;
 
 }
 
 
-body:before{
+
+body::before{
 
 content:"";
 
@@ -68,9 +72,15 @@ position:fixed;
 inset:0;
 
 background:
-radial-gradient(circle at top,rgba(255,255,255,.04),transparent 45%);
+radial-gradient(
+circle at top,
+rgba(255,255,255,.05),
+transparent 45%
+);
 
 pointer-events:none;
+
+z-index:-1;
 
 }
 
@@ -89,7 +99,7 @@ align-items:center;
 
 justify-content:center;
 
-padding:30px;
+padding:30px 20px;
 
 }
 
@@ -99,7 +109,7 @@ padding:30px;
 
 width:100%;
 
-max-width:1400px;
+max-width:1300px;
 
 text-align:center;
 
@@ -109,7 +119,7 @@ text-align:center;
 
 .hero-caption{
 
-font-size:11px;
+font-size:10px;
 
 letter-spacing:12px;
 
@@ -125,13 +135,15 @@ margin-bottom:70px;
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:clamp(70px,12vw,180px);
-
 font-weight:300;
+
+font-size:clamp(65px,12vw,180px);
 
 letter-spacing:18px;
 
 line-height:.85;
+
+max-width:100%;
 
 }
 
@@ -199,9 +211,11 @@ color:var(--gold-light);
 
 max-width:1200px;
 
+width:100%;
+
 margin:auto;
 
-padding:80px 40px;
+padding:80px 35px;
 
 }
 
@@ -211,9 +225,9 @@ padding:80px 40px;
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:80px;
-
 font-weight:300;
+
+font-size:80px;
 
 color:var(--gold-light);
 
@@ -237,14 +251,48 @@ color:#777;
 
 
 
-/* BOOK CARD */
+/* PREMIUM BOOK SECTION */
 
 
 .book{
 
-padding:80px 0;
+position:relative;
 
-border-top:1px solid var(--line);
+padding:70px 55px;
+
+margin:80px 0;
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.035),
+rgba(255,255,255,.005)
+);
+
+border:1px solid rgba(185,151,82,.22);
+
+overflow:hidden;
+
+}
+
+
+
+.book::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:90px;
+
+height:2px;
+
+background:var(--gold);
 
 }
 
@@ -254,11 +302,11 @@ border-top:1px solid var(--line);
 
 font-size:10px;
 
-letter-spacing:8px;
+letter-spacing:10px;
 
 color:var(--gold);
 
-margin-bottom:25px;
+margin-bottom:35px;
 
 }
 
@@ -268,13 +316,15 @@ margin-bottom:25px;
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:clamp(40px,5vw,75px);
+font-size:clamp(42px,5vw,78px);
 
 font-weight:300;
 
-line-height:1.1;
+line-height:1;
 
 color:var(--gold-light);
+
+max-width:900px;
 
 }
 
@@ -282,15 +332,17 @@ color:var(--gold-light);
 
 .book-description{
 
-margin-top:30px;
+margin-top:35px;
 
 max-width:750px;
 
-font-size:17px;
+font-size:18px;
 
 line-height:1.9;
 
 color:var(--gray);
+
+overflow-wrap:break-word;
 
 }
 
@@ -300,11 +352,13 @@ color:var(--gray);
 
 .book-highlight{
 
-margin-top:50px;
+margin-top:60px;
 
-padding:35px 0;
+padding:40px;
 
-border-top:1px solid rgba(185,151,82,.15);
+background:rgba(185,151,82,.04);
+
+border-left:2px solid var(--gold);
 
 }
 
@@ -314,9 +368,11 @@ border-top:1px solid rgba(185,151,82,.15);
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:40px;
+font-size:42px;
 
 font-weight:300;
+
+line-height:1.2;
 
 margin-bottom:20px;
 
@@ -326,13 +382,13 @@ margin-bottom:20px;
 
 .book-highlight p{
 
-max-width:750px;
-
 font-size:16px;
 
 line-height:1.8;
 
 color:var(--gray);
+
+overflow-wrap:break-word;
 
 }
 
@@ -340,22 +396,24 @@ color:var(--gray);
 
 
 
-/* METADATA */
+/* DATA */
 
 
 .metadata{
 
-margin-top:45px;
+margin-top:50px;
 
-padding:30px;
+padding:35px;
 
 display:grid;
 
 grid-template-columns:1fr 1fr;
 
-gap:30px;
+gap:35px;
 
-border:1px solid var(--line);
+background:#080808;
+
+border:1px solid rgba(185,151,82,.18);
 
 }
 
@@ -397,6 +455,8 @@ letter-spacing:3px;
 
 color:var(--gold-light);
 
+overflow-wrap:anywhere;
+
 }
 
 
@@ -412,7 +472,7 @@ display:flex;
 
 gap:15px;
 
-margin-top:35px;
+margin-top:40px;
 
 }
 
@@ -420,7 +480,7 @@ margin-top:35px;
 
 .buttons a{
 
-width:140px;
+width:150px;
 
 height:50px;
 
@@ -448,7 +508,9 @@ transition:.3s;
 
 .buttons a:hover{
 
-background:rgba(185,151,82,.15);
+background:var(--gold);
+
+color:#050505;
 
 }
 
@@ -465,7 +527,7 @@ border-top:1px solid var(--line);
 
 text-align:center;
 
-padding:90px 20px;
+padding:100px 20px;
 
 }
 
@@ -475,7 +537,7 @@ padding:90px 20px;
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:52px;
+font-size:55px;
 
 font-weight:300;
 
@@ -491,13 +553,13 @@ display:block;
 
 margin:20px;
 
-color:var(--white);
-
-text-decoration:none;
+font-size:14px;
 
 letter-spacing:3px;
 
-font-size:14px;
+color:var(--white);
+
+text-decoration:none;
 
 }
 
@@ -552,18 +614,17 @@ transform:none;
 @media(max-width:800px){
 
 
-.hero{
+.container{
 
-padding:20px;
+padding:50px 18px;
 
 }
+
 
 
 .hero-caption{
 
 letter-spacing:5px;
-
-margin-bottom:45px;
 
 }
 
@@ -571,9 +632,9 @@ margin-bottom:45px;
 
 .logo{
 
-font-size:60px;
+font-size:58px;
 
-letter-spacing:7px;
+letter-spacing:5px;
 
 }
 
@@ -581,9 +642,9 @@ letter-spacing:7px;
 
 .logo span{
 
-margin-top:40px;
+letter-spacing:12px;
 
-letter-spacing:18px;
+margin-top:40px;
 
 }
 
@@ -592,14 +653,6 @@ letter-spacing:18px;
 .hero-description{
 
 font-size:24px;
-
-}
-
-
-
-.container{
-
-padding:55px 22px;
 
 }
 
@@ -615,7 +668,9 @@ font-size:52px;
 
 .book{
 
-padding:55px 0;
+padding:35px 22px;
+
+margin:45px 0;
 
 }
 
@@ -637,9 +692,17 @@ font-size:16px;
 
 
 
+.book-highlight{
+
+padding:25px;
+
+}
+
+
+
 .book-highlight h3{
 
-font-size:32px;
+font-size:30px;
 
 }
 
@@ -690,6 +753,7 @@ PRIVATE DIGITAL ARCHIVE
 </div>
 
 
+
 <h1 class="logo">
 
 DELAUNAY
@@ -701,17 +765,24 @@ BOOK
 </h1>
 
 
+
 <div class="hero-divider"></div>
 
 
+
 <p class="hero-description">
+
 Color as a Generative Principle in the Work of Sonia Delaunay
+
 </p>
+
 
 
 </div>
 
+
 </section>
+
 
 
 
@@ -739,6 +810,8 @@ PREMIUM DIGITAL EDITION
 
 
 
+
+
 <!-- BOOK 01 -->
 
 
@@ -750,10 +823,14 @@ BOOK · 01
 </div>
 
 
+
 <h2 class="book-title">
+
 Color as a Generative Principle
 in the Work of Sonia Delaunay
+
 </h2>
+
 
 
 
@@ -769,6 +846,7 @@ a creative principle rather than a decorative element.
 
 
 
+
 <div class="book-highlight">
 
 
@@ -778,13 +856,17 @@ The language of color as a living structure.
 
 
 <p>
+
 Color creates rhythm, perception and emotional balance.
 This edition presents artistic research through a refined
 digital publication format designed for preservation.
+
 </p>
 
 
 </div>
+
+
 
 
 
@@ -798,9 +880,11 @@ digital publication format designed for preservation.
 ISBN
 </div>
 
+
 <div class="meta-value">
 xxxxxxxxx
 </div>
+
 
 </div>
 
@@ -812,15 +896,18 @@ xxxxxxxxx
 SHA-256
 </div>
 
+
 <div class="hash">
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
 </div>
 
+
 </div>
 
 
 </div>
+
 
 
 
@@ -842,6 +929,8 @@ BOOK
 
 
 </section>
+
+
 
 
 
@@ -862,9 +951,12 @@ BOOK · 02
 
 
 <h2 class="book-title">
+
 The Simultaneous Language
 of Color and Movement
+
 </h2>
+
 
 
 
@@ -879,18 +971,25 @@ that transformed modern artistic expression.
 
 
 
+
+
 <div class="book-highlight">
 
 
 <h3>
+
 Movement through chromatic balance.
+
 </h3>
 
 
+
 <p>
-The publication investigates the relationship between
-geometry, perception and the emotional qualities
-of abstract composition.
+
+The publication investigates the relationship
+between geometry, perception and the emotional
+qualities of abstract composition.
+
 </p>
 
 
@@ -899,10 +998,13 @@ of abstract composition.
 
 
 
+
+
 <div class="metadata">
 
 
 <div>
+
 
 <div class="meta-title">
 ISBN
@@ -918,7 +1020,9 @@ xxxxxxxxx
 
 
 
+
 <div>
+
 
 <div class="meta-title">
 SHA-256
@@ -926,15 +1030,18 @@ SHA-256
 
 
 <div class="hash">
+
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
-</div>
-
 
 </div>
 
 
 </div>
+
+
+</div>
+
 
 
 
@@ -956,6 +1063,8 @@ BOOK
 
 
 </section>
+
+
 
 
 
@@ -977,9 +1086,12 @@ BOOK · 03
 
 
 <h2 class="book-title">
+
 Chromatic Rhythm
 as Visual Architecture
+
 </h2>
+
 
 
 
@@ -996,18 +1108,25 @@ qualities of abstract composition.
 
 
 
+
+
 <div class="book-highlight">
 
 
 <h3>
+
 Structure and emotion inside the same visual space.
+
 </h3>
 
 
+
 <p>
+
 The edition explores how color and form create
 a unified language where movement, order
 and expression coexist.
+
 </p>
 
 
@@ -1016,10 +1135,14 @@ and expression coexist.
 
 
 
+
+
+
 <div class="metadata">
 
 
 <div>
+
 
 <div class="meta-title">
 ISBN
@@ -1035,7 +1158,9 @@ xxxxxxxxx
 
 
 
+
 <div>
+
 
 <div class="meta-title">
 SHA-256
@@ -1043,10 +1168,9 @@ SHA-256
 
 
 <div class="hash">
+
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
-</div>
-
 
 </div>
 
@@ -1054,109 +1178,9 @@ xxxxxxxxxxxxxxxx
 </div>
 
 
-
-
-<div class="buttons">
-
-
-<a href="#">
-DOI
-</a>
-
-
-<a href="#">
-BOOK
-</a>
-
-
 </div>
 
 
-  </section>
-  <!-- BOOK 04 -->
-
-
-<section class="book reveal">
-
-
-<div class="book-label">
-BOOK · 04
-</div>
-
-
-
-<h2 class="book-title">
-Geometry, Emotion and
-the Evolution of Abstract Vision
-</h2>
-
-
-
-<p class="book-description">
-
-A curated research edition examining the connection
-between mathematical structure, artistic innovation
-and human perception.
-
-</p>
-
-
-
-
-<div class="book-highlight">
-
-
-<h3>
-From geometry to visual experience.
-</h3>
-
-
-<p>
-
-Abstract vision is presented as a dialogue between
-precision and emotion, creating a timeless artistic
-vocabulary.
-
-</p>
-
-
-</div>
-
-
-
-
-<div class="metadata">
-
-
-<div>
-
-<div class="meta-title">
-ISBN
-</div>
-
-<div class="meta-value">
-xxxxxxxxx
-</div>
-
-</div>
-
-
-
-<div>
-
-<div class="meta-title">
-SHA-256
-</div>
-
-<div class="hash">
-xxxxxxxxxxxxxxxx<br>
-xxxxxxxxxxxxxxxx
-</div>
-
-</div>
-
-
-</div>
 
 
 
@@ -1177,6 +1201,129 @@ BOOK
 
 
 </section>
+<!-- BOOK 04 -->
+
+
+<section class="book reveal">
+
+
+<div class="book-label">
+BOOK · 04
+</div>
+
+
+
+<h2 class="book-title">
+
+Geometry, Emotion and
+the Evolution of Abstract Vision
+
+</h2>
+
+
+
+
+<p class="book-description">
+
+A curated research edition examining the connection
+between mathematical structure, artistic innovation
+and human perception.
+
+</p>
+
+
+
+
+
+<div class="book-highlight">
+
+
+<h3>
+
+From geometry to visual experience.
+
+</h3>
+
+
+
+<p>
+
+Abstract vision is presented as a dialogue between
+precision and emotion, creating a timeless artistic
+vocabulary.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="metadata">
+
+
+<div>
+
+<div class="meta-title">
+ISBN
+</div>
+
+
+<div class="meta-value">
+xxxxxxxxx
+</div>
+
+
+</div>
+
+
+
+<div>
+
+<div class="meta-title">
+SHA-256
+</div>
+
+
+<div class="hash">
+
+xxxxxxxxxxxxxxxx<br>
+xxxxxxxxxxxxxxxx
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="buttons">
+
+
+<a href="#">
+DOI
+</a>
+
+
+<a href="#">
+BOOK
+</a>
+
+
+</div>
+
+
+</section>
+
+
 
 
 
@@ -1196,10 +1343,14 @@ BOOK · 05
 
 
 
+
 <h2 class="book-title">
+
 The Digital Preservation
 of Artistic Heritage
+
 </h2>
+
 
 
 
@@ -1208,9 +1359,10 @@ of Artistic Heritage
 
 A contemporary archival approach dedicated
 to protecting, verifying and presenting cultural
-knowledge through digital documentation.
+knowledge through advanced digital documentation.
 
 </p>
+
 
 
 
@@ -1220,15 +1372,18 @@ knowledge through digital documentation.
 
 
 <h3>
+
 Preserving history through digital identity.
+
 </h3>
+
 
 
 <p>
 
 The edition connects traditional artistic research
-with modern preservation methods, creating
-a permanent reference for future exploration.
+with modern digital preservation methods,
+creating a permanent reference for future exploration.
 
 </p>
 
@@ -1238,38 +1393,51 @@ a permanent reference for future exploration.
 
 
 
+
+
+
 <div class="metadata">
 
 
 <div>
 
+
 <div class="meta-title">
 ISBN
 </div>
+
 
 <div class="meta-value">
 xxxxxxxxx
 </div>
 
+
 </div>
+
 
 
 
 <div>
 
+
 <div class="meta-title">
 SHA-256
 </div>
 
+
 <div class="hash">
+
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
-</div>
 
 </div>
 
 
 </div>
+
+
+</div>
+
 
 
 
@@ -1298,6 +1466,8 @@ BOOK
 
 
 
+
+
 <!-- BOOK 06 -->
 
 
@@ -1310,10 +1480,14 @@ BOOK · 06
 
 
 
+
 <h2 class="book-title">
+
 A Contemporary Legacy
 of Color and Innovation
+
 </h2>
+
 
 
 
@@ -1329,12 +1503,18 @@ and preservation.
 
 
 
+
+
+
 <div class="book-highlight">
 
 
 <h3>
+
 A timeless dialogue between art and technology.
+
 </h3>
+
 
 
 <p>
@@ -1351,18 +1531,24 @@ and verified information meet.
 
 
 
+
+
+
 <div class="metadata">
 
 
 <div>
 
+
 <div class="meta-title">
 ISBN
 </div>
 
+
 <div class="meta-value">
 xxxxxxxxx
 </div>
+
 
 </div>
 
@@ -1370,19 +1556,27 @@ xxxxxxxxx
 
 <div>
 
+
 <div class="meta-title">
 SHA-256
 </div>
 
+
 <div class="hash">
+
 xxxxxxxxxxxxxxxx<br>
 xxxxxxxxxxxxxxxx
-</div>
 
 </div>
 
 
 </div>
+
+
+</div>
+
+
+
 
 
 
@@ -1414,19 +1608,28 @@ BOOK
 
 
 
+
+
+
 <footer class="reveal">
 
 
 <h3 class="footer-name">
+
 Nicholas Van-Orton
+
 </h3>
 
 
 
 
+
 <a href="mailto:contact@delaunaybook.us">
+
 contact@delaunaybook.us
+
 </a>
+
 
 
 
@@ -1442,6 +1645,7 @@ did:web:identity.nvo987.us
 
 
 
+
 <div class="footer-note">
 
 DELAUNAY BOOK · PREMIUM DIGITAL EDITION
@@ -1449,7 +1653,11 @@ DELAUNAY BOOK · PREMIUM DIGITAL EDITION
 </div>
 
 
+
+
 </footer>
+
+
 
 
 
@@ -1469,9 +1677,12 @@ entries.forEach((entry)=>{
 
 if(entry.isIntersecting){
 
+
 entry.target.classList.add("active");
 
+
 observer.unobserve(entry.target);
+
 
 }
 
@@ -1481,8 +1692,11 @@ observer.unobserve(entry.target);
 
 },
 
+
 {
+
 threshold:0.15
+
 }
 
 
@@ -1490,13 +1704,17 @@ threshold:0.15
 
 
 
+
 document
 .querySelectorAll(".reveal")
-.forEach((item)=>{
+.forEach((element)=>{
 
-observer.observe(item);
+
+observer.observe(element);
+
 
 });
+
 
 
 </script>
