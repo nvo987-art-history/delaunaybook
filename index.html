@@ -8,12 +8,12 @@
 
 <title>Delaunay Book — Nicholas Van-Orton</title>
 
-<meta name="description" content="The Delaunay Archive — Private Digital Catalogue">
+<meta name="description" content="The Delaunay Archive">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 
 <style>
@@ -23,18 +23,17 @@
 
 --black:#030303;
 
---gold:#b8944a;
+--gold:#b8954d;
 
---gold-light:#ead89a;
+--gold-light:#e8d59a;
 
---cream:#f0eadc;
+--white:#f1ebdf;
 
---muted:#aaa394;
+--muted:#aaa397;
 
---line:rgba(184,148,74,.35);
+--line:rgba(184,149,77,.35);
 
 }
-
 
 
 *{
@@ -48,7 +47,6 @@ box-sizing:border-box;
 }
 
 
-
 html{
 
 scroll-behavior:smooth;
@@ -56,12 +54,11 @@ scroll-behavior:smooth;
 }
 
 
-
 body{
 
 background:var(--black);
 
-color:var(--cream);
+color:var(--white);
 
 font-family:"Inter",sans-serif;
 
@@ -70,8 +67,6 @@ overflow-x:hidden;
 }
 
 
-
-/* subtle paper atmosphere */
 
 body::before{
 
@@ -83,11 +78,11 @@ inset:0;
 
 pointer-events:none;
 
-opacity:.045;
+opacity:.04;
 
 background-image:
 
-radial-gradient(#ffffff 0.6px,transparent 0.6px);
+radial-gradient(#fff .6px,transparent .6px);
 
 background-size:90px 90px;
 
@@ -110,41 +105,10 @@ justify-content:center;
 
 padding:50px 30px;
 
-position:relative;
-
 }
-
-
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-width:550px;
-
-height:550px;
-
-background:
-
-radial-gradient(circle,
-
-rgba(184,148,74,.12),
-
-transparent 70%);
-
-filter:blur(40px);
-
-}
-
 
 
 .hero-inner{
-
-position:relative;
-
-z-index:2;
 
 width:100%;
 
@@ -155,16 +119,15 @@ text-align:center;
 }
 
 
-
 .eyebrow{
 
-font-size:10px;
+font-size:11px;
 
-letter-spacing:14px;
+letter-spacing:10px;
 
 color:var(--gold);
 
-margin-bottom:90px;
+margin-bottom:70px;
 
 }
 
@@ -176,13 +139,11 @@ font-family:"Cormorant Garamond",serif;
 
 font-weight:300;
 
-font-size:clamp(80px,13vw,220px);
+font-size:clamp(75px,12vw,180px);
 
-line-height:.9;
+line-height:.95;
 
-letter-spacing:18px;
-
-color:var(--cream);
+letter-spacing:12px;
 
 }
 
@@ -192,72 +153,60 @@ color:var(--cream);
 
 display:block;
 
-margin-top:110px;
-
-letter-spacing:45px;
+margin-top:75px;
 
 color:var(--gold-light);
 
+letter-spacing:28px;
+
 }
 
 
 
-.gold-divider{
+.divider{
+
+width:120px;
 
 height:1px;
 
-width:150px;
+background:var(--gold);
 
-margin:95px auto;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-var(--gold),
-
-transparent
-
-);
+margin:70px auto;
 
 }
 
 
 
-.hero-description{
+.hero-text{
 
 font-family:"Cormorant Garamond",serif;
 
-font-size:34px;
+font-size:30px;
 
 font-weight:300;
 
-line-height:1.7;
+line-height:1.6;
 
-max-width:760px;
+max-width:700px;
 
 margin:auto;
 
-color:#d8d0c0;
+color:#d8d0c2;
 
 }
 
 
 
-/* ARCHIVE BASE */
+/* ARCHIVE */
 
 
 .archive{
 
-max-width:1500px;
+max-width:1400px;
 
 margin:auto;
 
-padding:140px 8vw;
+padding:120px 8vw;
 
 }
 
@@ -265,7 +214,7 @@ padding:140px 8vw;
 
 .archive-header{
 
-margin-bottom:120px;
+margin-bottom:90px;
 
 }
 
@@ -273,11 +222,11 @@ margin-bottom:120px;
 
 .archive-header h2{
 
-font-family:"Cormorant Garamond",serif;
-
-font-size:110px;
+font-family:"Cormorant Garamond";
 
 font-weight:300;
+
+font-size:85px;
 
 color:var(--gold-light);
 
@@ -287,13 +236,13 @@ color:var(--gold-light);
 
 .archive-header p{
 
-margin-top:25px;
+font-size:11px;
 
-font-size:10px;
-
-letter-spacing:9px;
+letter-spacing:6px;
 
 color:#777;
+
+margin-top:20px;
 
 }
 
@@ -304,7 +253,7 @@ color:#777;
 
 .chapter{
 
-padding:90px 0;
+padding:80px 0;
 
 border-top:1px solid var(--line);
 
@@ -312,48 +261,38 @@ border-top:1px solid var(--line);
 
 
 
-.chapter:last-child{
-
-border-bottom:1px solid var(--line);
-
-}
-
-
-
 .chapter-title{
 
-font-family:"Cormorant Garamond",serif;
-
-font-size:clamp(45px,6vw,95px);
+font-family:"Cormorant Garamond";
 
 font-weight:300;
 
-line-height:1.05;
+font-size:clamp(42px,5vw,75px);
 
-max-width:1100px;
+line-height:1.1;
 
 color:var(--gold-light);
 
-margin-bottom:35px;
+max-width:1000px;
+
+margin-bottom:30px;
 
 }
 
 
 
-.chapter-description{
+.chapter-text{
 
-font-size:20px;
+font-size:18px;
 
-font-weight:300;
+line-height:1.9;
 
-line-height:2;
-
-max-width:780px;
+max-width:760px;
 
 color:var(--muted);
 
 }
-
+  <style>
 
 
 /* METADATA */
@@ -361,13 +300,13 @@ color:var(--muted);
 
 .metadata{
 
-margin-top:60px;
+margin-top:45px;
 
-display:grid;
+display:flex;
 
-gap:22px;
+flex-direction:column;
 
-font-size:14px;
+gap:20px;
 
 }
 
@@ -377,9 +316,11 @@ font-size:14px;
 
 display:flex;
 
-gap:35px;
-
 align-items:flex-start;
+
+gap:30px;
+
+font-size:15px;
 
 }
 
@@ -387,11 +328,11 @@ align-items:flex-start;
 
 .metadata-label{
 
-width:120px;
+width:90px;
 
-font-size:10px;
+font-size:11px;
 
-letter-spacing:5px;
+letter-spacing:4px;
 
 color:var(--gold);
 
@@ -401,7 +342,7 @@ color:var(--gold);
 
 .metadata-value{
 
-color:#d8d0c0;
+color:#d8d0c2;
 
 }
 
@@ -413,9 +354,9 @@ font-family:"Courier New",monospace;
 
 font-size:13px;
 
-line-height:2;
+line-height:1.8;
 
-letter-spacing:3px;
+letter-spacing:2px;
 
 color:var(--gold-light);
 
@@ -430,9 +371,9 @@ color:var(--gold-light);
 
 display:flex;
 
-gap:55px;
+gap:45px;
 
-margin-top:55px;
+margin-top:45px;
 
 }
 
@@ -440,17 +381,17 @@ margin-top:55px;
 
 .chapter-links a{
 
-text-decoration:none;
+font-size:14px;
 
-font-size:11px;
-
-letter-spacing:7px;
+letter-spacing:4px;
 
 color:var(--gold-light);
 
-position:relative;
+text-decoration:none;
 
-padding-bottom:12px;
+padding:12px 0;
+
+position:relative;
 
 }
 
@@ -462,13 +403,13 @@ content:"";
 
 position:absolute;
 
-bottom:0;
+bottom:5px;
 
 left:0;
 
-height:1px;
-
 width:0;
+
+height:1px;
 
 background:var(--gold-light);
 
@@ -486,14 +427,14 @@ width:100%;
 
 
 
-/* FOOTER BASE */
+/* FOOTER */
 
 
 footer{
 
-padding:150px 25px 90px;
-
 border-top:1px solid var(--line);
+
+padding:100px 25px 70px;
 
 text-align:center;
 
@@ -503,13 +444,15 @@ text-align:center;
 
 footer h3{
 
-font-family:"Cormorant Garamond",serif;
+font-family:"Cormorant Garamond";
 
 font-weight:300;
 
-font-size:100px;
+font-size:58px;
 
 color:var(--gold-light);
+
+margin-bottom:35px;
 
 }
 
@@ -519,15 +462,15 @@ footer a{
 
 display:block;
 
-margin:25px;
+font-size:15px;
 
-text-decoration:none;
+letter-spacing:3px;
 
 color:#ddd;
 
-letter-spacing:4px;
+text-decoration:none;
 
-font-size:15px;
+margin:18px;
 
 }
 
@@ -535,13 +478,13 @@ font-size:15px;
 
 .footer-mark{
 
-margin-top:80px;
+margin-top:55px;
 
-font-size:9px;
+font-size:10px;
 
-letter-spacing:12px;
+letter-spacing:8px;
 
-color:#555;
+color:#666;
 
 }
 
@@ -554,9 +497,9 @@ color:#555;
 
 opacity:0;
 
-transform:translateY(35px);
+transform:translateY(25px);
 
-transition:1.2s ease;
+transition:1s ease;
 
 }
 
@@ -569,7 +512,7 @@ opacity:1;
 transform:none;
 
 }
-  <style>
+
 
 
 /* TABLET */
@@ -578,69 +521,37 @@ transform:none;
 @media(max-width:900px){
 
 
-.hero{
-
-padding:40px 25px;
-
-}
-
-
 .hero-title{
 
-font-size:110px;
-
-letter-spacing:10px;
+font-size:100px;
 
 }
 
 
 .hero-title span{
 
-margin-top:80px;
-
-letter-spacing:25px;
-
-}
-
-
-.hero-description{
-
-font-size:28px;
+letter-spacing:18px;
 
 }
 
 
 .archive{
 
-padding:100px 40px;
+padding:90px 40px;
 
 }
 
 
 .archive-header h2{
 
-font-size:80px;
+font-size:70px;
 
 }
 
 
 .chapter-title{
 
-font-size:65px;
-
-}
-
-
-.chapter-description{
-
-font-size:18px;
-
-}
-
-
-footer h3{
-
-font-size:75px;
+font-size:55px;
 
 }
 
@@ -657,8 +568,6 @@ font-size:75px;
 
 .hero{
 
-min-height:100svh;
-
 padding:30px 20px;
 
 }
@@ -669,9 +578,9 @@ padding:30px 20px;
 
 font-size:9px;
 
-letter-spacing:6px;
+letter-spacing:5px;
 
-margin-bottom:55px;
+margin-bottom:45px;
 
 }
 
@@ -681,9 +590,7 @@ margin-bottom:55px;
 
 font-size:62px;
 
-letter-spacing:4px;
-
-line-height:.95;
+letter-spacing:3px;
 
 }
 
@@ -693,27 +600,25 @@ line-height:.95;
 
 margin-top:45px;
 
-letter-spacing:14px;
+letter-spacing:12px;
 
 }
 
 
 
-.gold-divider{
+.hero-text{
 
-width:90px;
-
-margin:60px auto;
+font-size:22px;
 
 }
 
 
 
-.hero-description{
+.divider{
 
-font-size:23px;
+margin:50px auto;
 
-line-height:1.6;
+width:80px;
 
 }
 
@@ -721,15 +626,7 @@ line-height:1.6;
 
 .archive{
 
-padding:75px 22px;
-
-}
-
-
-
-.archive-header{
-
-margin-bottom:70px;
+padding:70px 22px;
 
 }
 
@@ -737,15 +634,7 @@ margin-bottom:70px;
 
 .archive-header h2{
 
-font-size:52px;
-
-}
-
-
-
-.archive-header p{
-
-letter-spacing:5px;
+font-size:50px;
 
 }
 
@@ -753,7 +642,7 @@ letter-spacing:5px;
 
 .chapter{
 
-padding:60px 0;
+padding:55px 0;
 
 }
 
@@ -761,32 +650,17 @@ padding:60px 0;
 
 .chapter-title{
 
-font-size:43px;
-
-line-height:1.1;
+font-size:40px;
 
 }
 
 
 
-.chapter-description{
+.chapter-text{
 
-font-size:17px;
+font-size:16px;
 
 line-height:1.8;
-
-}
-
-
-
-/* metadata mobile */
-
-
-.metadata{
-
-margin-top:45px;
-
-gap:30px;
 
 }
 
@@ -802,41 +676,10 @@ display:block;
 
 .metadata-label{
 
-display:block;
-
-width:auto;
-
-margin-bottom:12px;
+margin-bottom:10px;
 
 }
 
-
-
-.metadata-value{
-
-font-size:14px;
-
-}
-
-
-
-.hash-value{
-
-font-size:11px;
-
-line-height:2.2;
-
-letter-spacing:2px;
-
-max-width:100%;
-
-overflow-wrap:anywhere;
-
-}
-
-
-
-/* links mobile */
 
 
 .chapter-links{
@@ -845,34 +688,21 @@ gap:30px;
 
 flex-wrap:wrap;
 
-margin-top:40px;
-
 }
 
 
 
 .chapter-links a{
 
-font-size:10px;
-
-letter-spacing:5px;
-
-min-height:44px;
-
-display:flex;
-
-align-items:center;
+font-size:13px;
 
 }
 
 
 
-/* footer */
-
-
 footer{
 
-padding:90px 20px 60px;
+padding:80px 20px 60px;
 
 }
 
@@ -880,9 +710,7 @@ padding:90px 20px 60px;
 
 footer h3{
 
-font-size:48px;
-
-line-height:1.1;
+font-size:42px;
 
 }
 
@@ -894,8 +722,6 @@ font-size:13px;
 
 letter-spacing:2px;
 
-word-break:break-word;
-
 }
 
 
@@ -906,54 +732,8 @@ font-size:8px;
 
 letter-spacing:5px;
 
-margin-top:55px;
-
 }
 
-
-}
-
-
-
-/* SMALL MOBILE */
-
-
-@media(max-width:380px){
-
-
-.hero-title{
-
-font-size:52px;
-
-}
-
-
-.hero-title span{
-
-letter-spacing:9px;
-
-}
-
-
-.hero-description{
-
-font-size:20px;
-
-}
-
-
-.chapter-title{
-
-font-size:36px;
-
-}
-
-
-footer h3{
-
-font-size:40px;
-
-}
 
 
 }
@@ -962,12 +742,10 @@ font-size:40px;
 </style>
 
 
-
 </head>
 
 
 <body>
-
 
 
 <section class="hero">
@@ -977,9 +755,7 @@ font-size:40px;
 
 
 <div class="eyebrow">
-
 PRIVATE DIGITAL ARCHIVE
-
 </div>
 
 
@@ -996,17 +772,16 @@ BOOK
 
 
 
-<div class="gold-divider"></div>
+<div class="divider"></div>
 
 
 
-<p class="hero-description">
+<p class="hero-text">
 
 Color, identity and artistic legacy preserved
 through a contemporary digital archive.
 
 </p>
-
 
 
 </div>
@@ -1033,9 +808,6 @@ ARTISTIC RESEARCH · DIGITAL CATALOGUE
 
 
 </div>
-<!-- ARCHIVE CONTENT -->
-
-
 <section class="chapter reveal">
 
 
@@ -1046,7 +818,7 @@ Color as a Generative Principle in the Work of Sonia Delaunay
 </h2>
 
 
-<p class="chapter-description">
+<p class="chapter-text">
 
 A study of chromatic movement, simultaneous contrast
 and the relationship between color, rhythm and artistic
@@ -1104,7 +876,6 @@ DOI
 Book
 </a>
 
-
 </div>
 
 
@@ -1124,7 +895,7 @@ The Simultaneous Language of Color and Movement
 </h2>
 
 
-<p class="chapter-description">
+<p class="chapter-text">
 
 An exploration of visual harmony, optical interaction
 and the dynamic principles that transformed modern
@@ -1182,7 +953,6 @@ DOI
 Book
 </a>
 
-
 </div>
 
 
@@ -1202,7 +972,7 @@ Chromatic Rhythm as Visual Architecture
 </h2>
 
 
-<p class="chapter-description">
+<p class="chapter-text">
 
 A catalogue entry examining the structure of color,
 geometric relationships and the emotional dimension
@@ -1260,7 +1030,6 @@ DOI
 Book
 </a>
 
-
 </div>
 
 
@@ -1275,7 +1044,7 @@ Geometry, Emotion and the Evolution of Abstract Vision
 </h2>
 
 
-<p class="chapter-description">
+<p class="chapter-text">
 
 A curated research chapter exploring the connection
 between mathematical structure, visual balance and
@@ -1333,7 +1102,6 @@ DOI
 Book
 </a>
 
-
 </div>
 
 
@@ -1353,7 +1121,7 @@ The Digital Preservation of Artistic Heritage
 </h2>
 
 
-<p class="chapter-description">
+<p class="chapter-text">
 
 A modern archival approach dedicated to protecting,
 verifying and presenting cultural knowledge through
@@ -1411,7 +1179,6 @@ DOI
 Book
 </a>
 
-
 </div>
 
 
@@ -1431,7 +1198,7 @@ A Contemporary Legacy of Color and Innovation
 </h2>
 
 
-<p class="chapter-description">
+<p class="chapter-text">
 
 The final archive chapter connecting historical
 artistic principles with future-oriented digital
@@ -1489,7 +1256,6 @@ DOI
 Book
 </a>
 
-
 </div>
 
 
@@ -1542,7 +1308,6 @@ const observer = new IntersectionObserver(
 
 entries.forEach(entry=>{
 
-
 if(entry.isIntersecting){
 
 entry.target.classList.add("active");
@@ -1551,9 +1316,7 @@ observer.unobserve(entry.target);
 
 }
 
-
 });
-
 
 },
 
@@ -1569,15 +1332,15 @@ threshold:0.12
 
 document
 .querySelectorAll(".reveal")
-.forEach((element)=>{
+.forEach(element=>{
 
 observer.observe(element);
 
 });
 
 
-
 </script>
+
 
 
 </body>
