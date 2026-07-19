@@ -3,20 +3,28 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Delaunay Book — Nicholas Van-Orton</title>
 
+<meta name="description" content="Delaunay Book — Private Digital Archive">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
 
+
 <style>
+
 
 :root{
 
 --black:#020202;
---gold:#b89442;
+--gold:#b9964a;
 --gold-light:#ead89a;
---cream:#eee8dc;
+--cream:#f0eadc;
+--muted:#aaa394;
 
 }
 
@@ -30,9 +38,16 @@ box-sizing:border-box;
 }
 
 
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
 body{
 
-background:#020202;
+background:var(--black);
 
 color:var(--cream);
 
@@ -43,9 +58,9 @@ overflow-x:hidden;
 }
 
 
-/* luxury grain */
+/* subtle paper texture */
 
-body:before{
+body::before{
 
 content:"";
 
@@ -53,13 +68,47 @@ position:fixed;
 
 inset:0;
 
-opacity:.09;
+pointer-events:none;
+
+opacity:.06;
+
+background-image:
+radial-gradient(#fff 0.7px,transparent 0.7px);
+
+background-size:80px 80px;
+
+}
+
+
+
+/* gold atmosphere */
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+
+height:600px;
+
+right:-200px;
+
+top:-200px;
+
+background:
+
+radial-gradient(circle,
+rgba(185,150,74,.16),
+transparent 70%);
+
+filter:blur(40px);
 
 pointer-events:none;
 
-background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-
 }
+
 
 
 /* HERO */
@@ -82,56 +131,16 @@ position:relative;
 }
 
 
-.hero:after{
-
-content:"";
-
-position:absolute;
-
-width:450px;
-
-height:450px;
-
-background:radial-gradient(circle,
-rgba(184,148,66,.15),
-transparent 70%);
-
-animation:light 12s infinite alternate;
-
-}
-
-
-@keyframes light{
-
-from{
-
-transform:translate(-80px,-40px);
-
-}
-
-to{
-
-transform:translate(80px,40px);
-
-}
-
-}
-
-
-
 .hero-content{
-
-position:relative;
-
-z-index:2;
 
 text-align:center;
 
+max-width:1100px;
+
 }
 
 
-
-.signature{
+.eyebrow{
 
 font-size:11px;
 
@@ -159,7 +168,6 @@ letter-spacing:-5px;
 }
 
 
-
 .hero h1 span{
 
 display:block;
@@ -169,49 +177,55 @@ color:var(--gold-light);
 }
 
 
-
-.line{
+.hero-line{
 
 height:1px;
 
-width:100px;
-
-background:var(--gold);
+width:120px;
 
 margin:55px auto;
 
+background:linear-gradient(
+90deg,
+transparent,
+var(--gold),
+transparent
+);
+
 }
 
 
+.hero-text{
 
-.hero p{
+font-family:"Cormorant Garamond",serif;
 
-font-family:"Cormorant Garamond";
-
-font-size:28px;
-
-max-width:650px;
+font-size:30px;
 
 line-height:1.6;
 
-color:#d2cbbb;
+font-weight:300;
+
+color:#d5cebf;
 
 }
 
 
 
-/* COLLECTION */
+/* ARCHIVE */
 
 
-.collection{
+.archive{
 
 padding:120px 8vw;
 
+max-width:1500px;
+
+margin:auto;
+
 }
 
 
-
-.heading{
+.archive-title{
 
 display:flex;
 
@@ -224,11 +238,11 @@ margin-bottom:100px;
 }
 
 
-.heading h2{
+.archive-title h2{
 
 font-family:"Cormorant Garamond";
 
-font-size:75px;
+font-size:80px;
 
 font-weight:300;
 
@@ -237,11 +251,11 @@ color:var(--gold-light);
 }
 
 
-.heading span{
+.archive-title span{
 
 font-size:11px;
 
-letter-spacing:6px;
+letter-spacing:7px;
 
 color:#777;
 
@@ -251,71 +265,45 @@ color:#777;
 
 .chapter{
 
-position:relative;
-
 display:grid;
 
 grid-template-columns:140px 1fr;
 
-padding:65px 0;
+position:relative;
 
-border-top:1px solid rgba(184,148,66,.35);
+padding:70px 0;
 
-}
-
-
-.chapter:last-child{
-
-border-bottom:1px solid rgba(184,148,66,.35);
-
-}
-
-
-.chapter:before{
-
-content:"";
-
-position:absolute;
-
-left:0;
-
-top:0;
-
-height:1px;
-
-width:0;
-
-background:var(--gold-light);
+border-top:1px solid rgba(185,150,74,.35);
 
 transition:.8s;
 
 }
 
 
-.chapter:hover:before{
+.chapter:last-child{
 
-width:100%;
+border-bottom:1px solid rgba(185,150,74,.35);
 
 }
 
 
-
-.index{
+.chapter-number{
 
 font-family:"Cormorant Garamond";
 
-font-size:38px;
+font-size:42px;
 
 color:var(--gold);
 
 }
 
 
-.chapter h3{
+
+.chapter-content h3{
 
 font-family:"Cormorant Garamond";
 
-font-size:62px;
+font-size:65px;
 
 font-weight:400;
 
@@ -324,18 +312,24 @@ margin-bottom:20px;
 }
 
 
+.chapter-content p{
 
-.chapter p{
+max-width:650px;
 
 font-size:18px;
 
 line-height:2;
 
-max-width:650px;
-
-color:#c7c1b5;
-
 font-weight:300;
+
+color:var(--muted);
+
+}
+
+
+.chapter:hover{
+
+padding-left:20px;
 
 }
 
@@ -346,11 +340,11 @@ font-weight:300;
 
 footer{
 
-padding:130px 25px;
+padding:140px 25px 80px;
+
+border-top:1px solid rgba(185,150,74,.35);
 
 text-align:center;
-
-border-top:1px solid rgba(184,148,66,.3);
 
 }
 
@@ -359,13 +353,13 @@ footer h3{
 
 font-family:"Cormorant Garamond";
 
-font-size:72px;
+font-size:75px;
 
 font-weight:300;
 
 color:var(--gold-light);
 
-margin-bottom:40px;
+margin-bottom:45px;
 
 }
 
@@ -375,20 +369,19 @@ footer a{
 
 display:block;
 
-margin:22px;
+text-decoration:none;
+
+color:#ddd;
 
 font-size:16px;
 
 letter-spacing:3px;
 
-color:#ddd;
-
-text-decoration:none;
+margin:20px;
 
 transition:.4s;
 
 }
-
 
 
 footer a:hover{
@@ -398,8 +391,7 @@ color:var(--gold-light);
 }
 
 
-
-.footer-mark{
+.signature{
 
 margin-top:70px;
 
@@ -407,11 +399,37 @@ font-size:10px;
 
 letter-spacing:10px;
 
-color:#555;
+color:#666;
 
 }
 
 
+
+/* animations */
+
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:1.2s ease;
+
+}
+
+
+.reveal.active{
+
+opacity:1;
+
+transform:none;
+
+}
+
+
+
+/* MOBILE */
 
 
 @media(max-width:700px){
@@ -421,10 +439,12 @@ color:#555;
 
 min-height:90vh;
 
+padding:25px;
+
 }
 
 
-.signature{
+.eyebrow{
 
 letter-spacing:6px;
 
@@ -438,21 +458,21 @@ letter-spacing:-2px;
 }
 
 
-.hero p{
+.hero-text{
 
-font-size:22px;
-
-}
-
-
-.collection{
-
-padding:70px 25px;
+font-size:23px;
 
 }
 
 
-.heading{
+.archive{
+
+padding:80px 25px;
+
+}
+
+
+.archive-title{
 
 display:block;
 
@@ -461,9 +481,9 @@ margin-bottom:60px;
 }
 
 
-.heading h2{
+.archive-title h2{
 
-font-size:52px;
+font-size:55px;
 
 }
 
@@ -472,23 +492,30 @@ font-size:52px;
 
 grid-template-columns:1fr;
 
-gap:20px;
-
 padding:45px 0;
+
+gap:20px;
 
 }
 
 
-.chapter h3{
+.chapter-content h3{
 
 font-size:45px;
 
 }
 
 
+.chapter:hover{
+
+padding-left:0;
+
+}
+
+
 footer h3{
 
-font-size:48px;
+font-size:50px;
 
 }
 
@@ -500,17 +527,17 @@ font-size:48px;
 
 </head>
 
+
 <body>
 
 
 <section class="hero">
 
+<div class="hero-content reveal">
 
-<div class="hero-content">
 
-
-<div class="signature">
-PRIVATE ARCHIVE · EST. 2026
+<div class="eyebrow">
+PRIVATE DIGITAL ARCHIVE
 </div>
 
 
@@ -520,26 +547,25 @@ DELAUNAY
 </h1>
 
 
-<div class="line"></div>
+<div class="hero-line"></div>
 
 
-<p>
-A timeless digital manuscript of identity,
-vision and legacy.
+<p class="hero-text">
+A timeless manuscript of identity,
+vision and digital legacy.
 </p>
 
 
 </div>
 
-
 </section>
 
 
 
-<section class="collection">
+<section class="archive">
 
 
-<div class="heading">
+<div class="archive-title reveal">
 
 <h2>
 The Archive
@@ -552,75 +578,133 @@ SIX CHAPTERS
 </div>
 
 
-<div class="chapter">
-<div class="index">I</div>
-<div>
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+I
+</div>
+
+<div class="chapter-content">
+
 <h3>Identity</h3>
+
 <p>
-The origin of a distinguished digital presence,
-crafted with precision and authenticity.
+The foundation of a refined digital presence,
+created with authenticity and purpose.
 </p>
+
 </div>
+
 </div>
 
 
-<div class="chapter">
-<div class="index">II</div>
-<div>
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+II
+</div>
+
+<div class="chapter-content">
+
 <h3>Vision</h3>
+
 <p>
 A philosophy where technology follows timeless design.
 </p>
+
 </div>
+
 </div>
 
 
-<div class="chapter">
-<div class="index">III</div>
-<div>
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+III
+</div>
+
+<div class="chapter-content">
+
 <h3>Legacy</h3>
+
 <p>
-Preserving ideas and values beyond generations.
+Preserving values and ideas beyond the present moment.
 </p>
+
 </div>
+
 </div>
 
 
-<div class="chapter">
-<div class="index">IV</div>
-<div>
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+IV
+</div>
+
+<div class="chapter-content">
+
 <h3>Architecture</h3>
+
 <p>
-A structured environment built around elegance.
+A structured digital environment built around elegance.
 </p>
+
 </div>
+
 </div>
 
 
-<div class="chapter">
-<div class="index">V</div>
-<div>
-<h3>Security</h3>
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+V
+</div>
+
+<div class="chapter-content">
+
+<h3>Trust</h3>
+
 <p>
-Trust and privacy at the foundation of identity.
+Privacy and authenticity at the center of identity.
 </p>
+
 </div>
+
 </div>
 
 
-<div class="chapter">
-<div class="index">VI</div>
-<div>
+
+<div class="chapter reveal">
+
+<div class="chapter-number">
+VI
+</div>
+
+<div class="chapter-content">
+
 <h3>Future</h3>
+
 <p>
-The next chapter of digital craftsmanship.
+The continuation of a digital masterpiece.
 </p>
+
 </div>
+
 </div>
 
 
 </section>
-<footer>
+
+
+
+<footer class="reveal">
+
 
 <h3>
 Nicholas Van-Orton
@@ -637,7 +721,7 @@ did:web:identity.nvo987.us
 </a>
 
 
-<div class="footer-mark">
+<div class="signature">
 DELAUNAY BOOK · PREMIUM DIGITAL EDITION
 </div>
 
@@ -648,90 +732,38 @@ DELAUNAY BOOK · PREMIUM DIGITAL EDITION
 
 <script>
 
-/* subtle reveal animation */
-
-const elements=document.querySelectorAll(
-".chapter,.hero-content,footer"
-);
-
 
 const observer=new IntersectionObserver(
-(entries)=>{
+
+entries=>{
 
 entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
+entry.target.classList.add("active");
 
 }
 
 });
 
 },
+
 {
 threshold:.15
 }
+
 );
 
 
 
-elements.forEach(el=>{
-
-el.style.opacity="0";
-
-el.style.transform="translateY(35px)";
-
-el.style.transition="1.2s cubic-bezier(.2,.7,.2,1)";
-
-observer.observe(el);
-
-});
-
-
-
-/* premium cursor light */
-
-const cursor=document.createElement("div");
-
-cursor.style.position="fixed";
-
-cursor.style.width="250px";
-
-cursor.style.height="250px";
-
-cursor.style.borderRadius="50%";
-
-cursor.style.pointerEvents="none";
-
-cursor.style.background=
-"radial-gradient(circle,rgba(234,216,154,.08),transparent 70%)";
-
-cursor.style.transform="translate(-50%,-50%)";
-
-cursor.style.zIndex="999";
-
-cursor.style.display="none";
-
-document.body.appendChild(cursor);
-
-
-
-window.addEventListener("mousemove",(e)=>{
-
-cursor.style.display="block";
-
-cursor.style.left=e.clientX+"px";
-
-cursor.style.top=e.clientY+"px";
-
-});
+document
+.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
 
 
 </script>
 
 
 </body>
-</html>
+  </html>
