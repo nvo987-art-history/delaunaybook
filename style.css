@@ -43,9 +43,11 @@ body {
     margin: 0;
     background: var(--paper);
     color: var(--ink);
+
     font-family: var(--sans);
     font-weight: 300;
     line-height: 1.65;
+
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -110,16 +112,18 @@ em {
 
 .nav-brand {
     font-family: var(--serif);
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     font-weight: 500;
     letter-spacing: 0.015em;
 }
 
 .nav-meta {
     color: var(--muted);
-    font-size: 0.68rem;
+
+    font-size: 0.78rem;
     font-weight: 400;
     letter-spacing: 0.16em;
+
     text-transform: uppercase;
 }
 
@@ -149,10 +153,12 @@ em {
     margin-bottom: 1.5rem;
 
     color: var(--muted);
-    font-size: 0.68rem;
+
+    font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.2em;
     line-height: 1.4;
+
     text-transform: uppercase;
 }
 
@@ -176,24 +182,26 @@ em {
     margin: 0;
 
     color: var(--muted);
+
     font-family: var(--serif);
-    font-size: clamp(1.45rem, 2.2vw, 2.25rem);
+    font-size: clamp(1.5rem, 2.25vw, 2.3rem);
     font-weight: 400;
     line-height: 1.15;
 }
 
 .hero-index {
     align-self: end;
-    max-width: 320px;
+    max-width: 340px;
     padding-bottom: 1rem;
 }
 
 .hero-index-number {
     margin-bottom: 1.25rem;
 
-    font-size: 0.68rem;
+    font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.18em;
+
     text-transform: uppercase;
 }
 
@@ -201,7 +209,8 @@ em {
     margin: 0;
 
     color: var(--muted);
-    font-size: 0.9rem;
+
+    font-size: 1rem;
     line-height: 1.8;
 }
 
@@ -213,10 +222,11 @@ em {
 .section-label {
     margin: 0;
 
-    font-size: 0.68rem;
+    font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.2em;
     line-height: 1.4;
+
     text-transform: uppercase;
 }
 
@@ -252,11 +262,12 @@ em {
 }
 
 .intro-copy {
-    max-width: 680px;
+    max-width: 700px;
     margin-bottom: 0;
 
     color: var(--muted);
-    font-size: 0.98rem;
+
+    font-size: 1.08rem;
     line-height: 1.9;
 }
 
@@ -298,15 +309,17 @@ em {
 
 .data-label {
     color: var(--muted);
-    font-size: 0.63rem;
+
+    font-size: 0.74rem;
     font-weight: 500;
     letter-spacing: 0.17em;
+
     text-transform: uppercase;
 }
 
 .data-value {
     font-family: var(--serif);
-    font-size: 1.45rem;
+    font-size: 1.65rem;
     font-weight: 400;
     line-height: 1.1;
 }
@@ -344,11 +357,12 @@ em {
 
 .index-note {
     align-self: end;
-    max-width: 380px;
+    max-width: 400px;
     margin: 0;
 
     color: var(--muted);
-    font-size: 0.9rem;
+
+    font-size: 1rem;
     line-height: 1.8;
 }
 
@@ -370,6 +384,7 @@ em {
 
 .theme-number {
     color: var(--muted);
+
     font-family: var(--serif);
     font-size: 2.2rem;
     font-weight: 300;
@@ -388,11 +403,12 @@ em {
 }
 
 .theme-description {
-    max-width: 400px;
+    max-width: 420px;
     margin: 0;
 
     color: var(--muted);
-    font-size: 0.88rem;
+
+    font-size: 1rem;
     line-height: 1.8;
 }
 
@@ -442,7 +458,8 @@ em {
     margin: 0;
 
     color: #c5c1b8;
-    font-size: 1rem;
+
+    font-size: 1.08rem;
     line-height: 1.9;
 }
 
@@ -524,8 +541,9 @@ em {
     margin: 0;
 
     color: var(--muted);
+
     font-family: var(--serif);
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     line-height: 1.35;
 }
 
@@ -541,9 +559,10 @@ em {
     border-top: 1px solid var(--ink);
     border-bottom: 1px solid var(--ink);
 
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 0.16em;
+
     text-transform: uppercase;
 
     transition:
@@ -589,15 +608,17 @@ em {
 .footer-heading {
     margin-bottom: 1rem;
 
-    font-size: 0.63rem;
+    font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.17em;
+
     text-transform: uppercase;
 }
 
 .footer-link {
     color: var(--muted);
-    font-size: 0.85rem;
+
+    font-size: 0.95rem;
 
     transition: color 180ms ease;
 }
@@ -615,9 +636,11 @@ em {
     gap: 2rem;
 
     color: var(--muted);
-    font-size: 0.63rem;
+
+    font-size: 0.7rem;
     font-weight: 400;
     letter-spacing: 0.13em;
+
     text-transform: uppercase;
 }
 
@@ -629,79 +652,6 @@ em {
 a:focus-visible {
     outline: 1px solid var(--ink);
     outline-offset: 6px;
-}
-
-
-/* =========================================================
-   DESKTOP TYPOGRAPHY SCALE
-   ========================================================= */
-
-@media (min-width: 1001px) {
-
-    .nav-brand {
-        font-size: 1.55rem;
-    }
-
-    .nav-meta {
-        font-size: 0.76rem;
-    }
-
-    .kicker,
-    .section-label,
-    .hero-index-number,
-    .data-label,
-    .footer-heading {
-        font-size: 0.78rem;
-    }
-
-    .hero-index-text {
-        font-size: 1rem;
-        line-height: 1.8;
-    }
-
-    .intro-copy {
-        font-size: 1.08rem;
-        line-height: 1.85;
-    }
-
-    .data-value {
-        font-size: 1.65rem;
-    }
-
-    .index-note {
-        font-size: 1rem;
-        line-height: 1.8;
-    }
-
-    .theme-description {
-        font-size: 0.98rem;
-        line-height: 1.8;
-    }
-
-    .feature-text {
-        font-size: 1.08rem;
-        line-height: 1.85;
-    }
-
-    .structure-copy p {
-        font-size: clamp(1.8rem, 2.5vw, 2.65rem);
-    }
-
-    .purchase-copy {
-        font-size: 1.5rem;
-    }
-
-    .purchase-link {
-        font-size: 0.8rem;
-    }
-
-    .footer-link {
-        font-size: 0.95rem;
-    }
-
-    .footer-bottom {
-        font-size: 0.72rem;
-    }
 }
 
 
