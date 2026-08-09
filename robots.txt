@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://delaunaybook.us/sitemap.xml
+
+Host: https://delaunaybook.us/
