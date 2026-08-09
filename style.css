@@ -633,6 +633,79 @@ a:focus-visible {
 
 
 /* =========================================================
+   DESKTOP TYPOGRAPHY SCALE
+   ========================================================= */
+
+@media (min-width: 1001px) {
+
+    .nav-brand {
+        font-size: 1.55rem;
+    }
+
+    .nav-meta {
+        font-size: 0.76rem;
+    }
+
+    .kicker,
+    .section-label,
+    .hero-index-number,
+    .data-label,
+    .footer-heading {
+        font-size: 0.78rem;
+    }
+
+    .hero-index-text {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .intro-copy {
+        font-size: 1.08rem;
+        line-height: 1.85;
+    }
+
+    .data-value {
+        font-size: 1.65rem;
+    }
+
+    .index-note {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .theme-description {
+        font-size: 0.98rem;
+        line-height: 1.8;
+    }
+
+    .feature-text {
+        font-size: 1.08rem;
+        line-height: 1.85;
+    }
+
+    .structure-copy p {
+        font-size: clamp(1.8rem, 2.5vw, 2.65rem);
+    }
+
+    .purchase-copy {
+        font-size: 1.5rem;
+    }
+
+    .purchase-link {
+        font-size: 0.8rem;
+    }
+
+    .footer-link {
+        font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.72rem;
+    }
+}
+
+
+/* =========================================================
    RESPONSIVE — TABLET
    ========================================================= */
 
@@ -852,4 +925,4 @@ a:focus-visible {
     *::after {
         transition: none !important;
     }
-  }
+   }
