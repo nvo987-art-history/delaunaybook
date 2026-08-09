@@ -2,11 +2,14 @@
 
 :root {
     --black: #070706;
-    --black-2: #0d0d0b;
-    --paper: #eee9df;
-    --muted: #aaa59b;
+    --black-2: #11110f;
+
+    /* Javítva: a fő szöveg és a másodlagos szöveg kontrasztja */
+    --paper: #f4f0e7;
+    --muted: #c3beb4;
+
     --gold: #c9a451;
-    --line: rgba(238, 233, 223, 0.14);
+    --line: rgba(244, 240, 231, 0.18);
 
     --sans: "DM Sans", sans-serif;
     --serif: "Playfair Display", Georgia, serif;
@@ -30,7 +33,10 @@ body {
     background: var(--black);
     color: var(--paper);
     font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 a {
@@ -72,7 +78,7 @@ img {
 
 .nav-brand {
     color: var(--gold);
-    font: 500 10px/1 var(--mono);
+    font: 500 11px/1 var(--mono);
     letter-spacing: .18em;
     text-transform: uppercase;
     text-decoration: none;
@@ -80,7 +86,7 @@ img {
 
 .nav-meta {
     color: var(--muted);
-    font: 400 10px/1 var(--mono);
+    font: 400 11px/1.4 var(--mono);
     letter-spacing: .12em;
     text-transform: uppercase;
 }
@@ -144,7 +150,7 @@ img {
 .kicker {
     margin: 0 0 25px;
     color: var(--gold);
-    font: 500 10px/1.4 var(--mono);
+    font: 500 11px/1.4 var(--mono);
     letter-spacing: .22em;
     text-transform: uppercase;
 }
@@ -152,7 +158,7 @@ img {
 .hero-title {
     margin: 0;
     max-width: 900px;
-    font: 500 clamp(4.5rem, 10vw, 10.5rem)/.82 var(--serif);
+    font: 500 clamp(4.5rem, 10vw, 10.5rem)/.84 var(--serif);
     letter-spacing: -.055em;
 }
 
@@ -167,14 +173,15 @@ img {
     display: flex;
     align-items: center;
     gap: 16px;
-    color: var(--muted);
-    font: 500 10px/1.4 var(--mono);
-    letter-spacing: .15em;
+    color: var(--paper);
+    font: 500 11px/1.6 var(--mono);
+    letter-spacing: .13em;
     text-transform: uppercase;
 }
 
 .hero-subtitle::before {
     content: "";
+    flex: 0 0 58px;
     width: 58px;
     height: 1px;
     background: var(--gold);
@@ -195,11 +202,11 @@ img {
 }
 
 .hero-index-text {
-    max-width: 280px;
+    max-width: 300px;
     margin: 22px 0 0;
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.75;
 }
 
 
@@ -220,7 +227,7 @@ img {
 
 .section-label {
     color: var(--gold);
-    font: 500 10px/1.4 var(--mono);
+    font: 500 11px/1.4 var(--mono);
     letter-spacing: .2em;
     text-transform: uppercase;
 }
@@ -228,7 +235,7 @@ img {
 .intro-lead {
     margin: 0;
     max-width: 920px;
-    font: 400 clamp(2.2rem, 5vw, 5.2rem)/1.03 var(--serif);
+    font: 400 clamp(2.2rem, 5vw, 5.2rem)/1.06 var(--serif);
     letter-spacing: -.035em;
 }
 
@@ -236,8 +243,8 @@ img {
     margin: 38px 0 0;
     max-width: 720px;
     color: var(--muted);
-    font-size: 15px;
-    line-height: 1.9;
+    font-size: 16px;
+    line-height: 1.85;
 }
 
 
@@ -252,8 +259,8 @@ img {
 }
 
 .data-item {
-    padding: 28px var(--pad);
-    min-height: 140px;
+    padding: 32px var(--pad);
+    min-height: 150px;
     border-right: 1px solid var(--line);
 }
 
@@ -265,7 +272,7 @@ img {
     display: block;
     margin-bottom: 22px;
     color: var(--gold);
-    font: 500 9px/1 var(--mono);
+    font: 500 10px/1 var(--mono);
     letter-spacing: .18em;
     text-transform: uppercase;
 }
@@ -273,7 +280,7 @@ img {
 .data-value {
     display: block;
     color: var(--paper);
-    font: 400 19px/1.25 var(--serif);
+    font: 400 20px/1.3 var(--serif);
 }
 
 
@@ -295,16 +302,16 @@ img {
 
 .index-title {
     margin: 12px 0 0;
-    font: 400 clamp(3rem, 7vw, 7rem)/.86 var(--serif);
+    font: 400 clamp(3rem, 7vw, 7rem)/.9 var(--serif);
     letter-spacing: -.05em;
 }
 
 .index-note {
-    max-width: 290px;
+    max-width: 320px;
     margin: 0;
     color: var(--muted);
-    font-size: 12px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.75;
 }
 
 .theme-list {
@@ -316,7 +323,7 @@ img {
     grid-template-columns: 90px minmax(0, 1.3fr) minmax(200px, .7fr);
     gap: 30px;
     align-items: center;
-    padding: 34px 0;
+    padding: 38px 0;
     border-bottom: 1px solid var(--line);
 }
 
@@ -327,15 +334,16 @@ img {
 
 .theme-title {
     margin: 0;
-    font: 400 clamp(1.8rem, 3.2vw, 3.5rem)/.95 var(--serif);
+    color: var(--paper);
+    font: 400 clamp(1.8rem, 3.2vw, 3.5rem)/1 var(--serif);
     letter-spacing: -.025em;
 }
 
 .theme-description {
     margin: 0;
     color: var(--muted);
-    font-size: 12px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.75;
 }
 
 
@@ -391,7 +399,8 @@ img {
 
 .feature-title {
     margin: 20px 0 0;
-    font: 400 clamp(3.2rem, 7vw, 7rem)/.88 var(--serif);
+    color: var(--paper);
+    font: 400 clamp(3.2rem, 7vw, 7rem)/.92 var(--serif);
     letter-spacing: -.05em;
 }
 
@@ -404,8 +413,8 @@ img {
     max-width: 590px;
     margin: 35px 0 0;
     color: var(--muted);
-    font-size: 14px;
-    line-height: 1.9;
+    font-size: 16px;
+    line-height: 1.85;
 }
 
 
@@ -431,13 +440,13 @@ img {
 .structure-copy p {
     margin: 0 0 26px;
     color: var(--muted);
-    font-size: 15px;
-    line-height: 1.9;
+    font-size: 16px;
+    line-height: 1.85;
 }
 
 .structure-copy p:first-child {
     color: var(--paper);
-    font: 400 clamp(2rem, 4vw, 3.8rem)/1.08 var(--serif);
+    font: 400 clamp(2rem, 4vw, 3.8rem)/1.1 var(--serif);
     letter-spacing: -.025em;
 }
 
@@ -462,15 +471,15 @@ img {
 .purchase-title {
     margin: 15px 0 0;
     max-width: 850px;
-    font: 400 clamp(3.5rem, 8vw, 8rem)/.84 var(--serif);
+    font: 400 clamp(3.5rem, 8vw, 8rem)/.88 var(--serif);
     letter-spacing: -.055em;
 }
 
 .purchase-copy {
     max-width: 580px;
     margin: 28px 0 0;
-    color: #555149;
-    font-size: 14px;
+    color: #4f4b44;
+    font-size: 15px;
     line-height: 1.8;
 }
 
@@ -479,11 +488,12 @@ img {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    min-height: 70px;
     padding: 22px 24px;
     background: var(--black);
     color: var(--paper);
     text-decoration: none;
-    font: 500 10px/1 var(--mono);
+    font: 500 11px/1.4 var(--mono);
     letter-spacing: .15em;
     text-transform: uppercase;
     transition: transform .25s ease, background .25s ease;
@@ -505,7 +515,9 @@ img {
 --------------------------------------------- */
 
 .footer {
-    padding: 80px var(--pad) 30px;
+    padding: 90px var(--pad) 35px;
+    background: var(--black);
+    color: var(--paper);
     border-top: 1px solid var(--line);
 }
 
@@ -513,13 +525,14 @@ img {
     display: grid;
     grid-template-columns: 1.5fr .7fr .8fr;
     gap: 70px;
-    padding-bottom: 80px;
+    padding-bottom: 90px;
 }
 
 .footer-title {
     margin: 0;
     max-width: 700px;
-    font: 400 clamp(2.8rem, 6vw, 6rem)/.88 var(--serif);
+    color: var(--paper);
+    font: 400 clamp(3rem, 6vw, 6rem)/.92 var(--serif);
     letter-spacing: -.045em;
 }
 
@@ -529,9 +542,9 @@ img {
 }
 
 .footer-heading {
-    margin: 0 0 20px;
+    margin: 0 0 22px;
     color: var(--gold);
-    font: 500 9px/1 var(--mono);
+    font: 500 10px/1.2 var(--mono);
     letter-spacing: .18em;
     text-transform: uppercase;
 }
@@ -539,25 +552,34 @@ img {
 .footer-link {
     display: block;
     width: fit-content;
-    margin-bottom: 12px;
-    color: var(--muted);
-    font-size: 12px;
+    margin-bottom: 15px;
+
+    /* Lényegesen világosabb, mint az eredeti */
+    color: #d7d2c9;
+
+    font-size: 15px;
+    line-height: 1.6;
     text-decoration: none;
     overflow-wrap: anywhere;
+    transition: color .2s ease;
 }
 
-.footer-link:hover {
-    color: var(--paper);
+.footer-link:hover,
+.footer-link:focus-visible {
+    color: var(--gold);
 }
 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    padding-top: 22px;
+    padding-top: 25px;
     border-top: 1px solid var(--line);
-    color: #68645d;
-    font: 400 9px/1.5 var(--mono);
+
+    /* Az eredeti #68645d túl sötét volt */
+    color: #aaa59b;
+
+    font: 400 11px/1.6 var(--mono);
     letter-spacing: .06em;
 }
 
@@ -647,6 +669,10 @@ img {
         padding-top: 22px;
     }
 
+    .nav-brand {
+        font-size: 10px;
+    }
+
     .nav-meta {
         display: none;
     }
@@ -654,16 +680,30 @@ img {
     .hero {
         min-height: 760px;
         padding-top: 120px;
+        padding-bottom: 55px;
     }
 
     .hero-title {
-        font-size: clamp(4rem, 18vw, 6.2rem);
-        line-height: .83;
+        /*
+         * Nem kisebb, hanem jobban olvasható:
+         * kisebb sortömörítés + megfelelő szélesség.
+         */
+        max-width: 100%;
+        font-size: clamp(3.5rem, 17vw, 5.8rem);
+        line-height: .88;
+        letter-spacing: -.05em;
     }
 
     .hero-subtitle {
-        max-width: 270px;
+        max-width: 100%;
+        margin-top: 32px;
+        font-size: 10px;
         line-height: 1.7;
+    }
+
+    .hero-subtitle::before {
+        flex-basis: 42px;
+        width: 42px;
     }
 
     .hero-index {
@@ -674,6 +714,12 @@ img {
         font-size: 6rem;
     }
 
+    .hero-index-text {
+        max-width: 310px;
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
     .intro {
         padding-top: 85px;
         padding-bottom: 85px;
@@ -681,6 +727,12 @@ img {
 
     .intro-lead {
         font-size: 2.35rem;
+        line-height: 1.08;
+    }
+
+    .intro-copy {
+        font-size: 15px;
+        line-height: 1.8;
     }
 
     .book-data {
@@ -698,51 +750,117 @@ img {
         border-bottom: 0;
     }
 
+    .data-value {
+        font-size: 21px;
+    }
+
+    .index {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
     .index-title {
         font-size: 3.6rem;
+        line-height: .92;
+    }
+
+    .index-note {
+        font-size: 14px;
     }
 
     .theme {
         grid-template-columns: 42px 1fr;
-        padding: 28px 0;
+        padding: 30px 0;
     }
 
     .theme-title {
         font-size: 2rem;
+        line-height: 1;
     }
 
     .theme-description {
         grid-column: 2;
-        font-size: 12px;
+        font-size: 14px;
+        line-height: 1.7;
     }
 
     .feature-box {
         min-height: 520px;
+        padding: 35px 28px;
     }
 
     .feature-title {
         font-size: 3.5rem;
+        line-height: .94;
+    }
+
+    .feature-text {
+        font-size: 15px;
+        line-height: 1.8;
     }
 
     .purchase-title {
         font-size: 4rem;
     }
 
+    .purchase-copy {
+        font-size: 15px;
+    }
+
+    .purchase-link {
+        min-height: 68px;
+        padding: 20px;
+        font-size: 10px;
+    }
+
+    /* ---------------- FOOTER MOBILE ---------------- */
+
+    .footer {
+        padding: 75px var(--pad) 30px;
+    }
+
     .footer-top {
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 48px;
+        padding-bottom: 65px;
     }
 
     .footer-title {
         grid-column: auto;
+        font-size: clamp(3rem, 15vw, 5rem);
+        line-height: .92;
+    }
+
+    .footer-heading {
+        margin-bottom: 18px;
+        font-size: 10px;
+    }
+
+    .footer-link {
+        /*
+         * A footerben ne legyen apró, szürke, nehezen olvasható szöveg.
+         */
+        margin-bottom: 16px;
+        color: #ddd8cf;
+        font-size: 16px;
+        line-height: 1.65;
     }
 
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
+        gap: 10px;
+        padding-top: 22px;
+        color: #aaa59b;
+        font-size: 10px;
+        line-height: 1.7;
     }
 }
 
+
+/* ---------------------------------------------
+   ACCESSIBILITY / MOTION
+--------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -754,4 +872,4 @@ img {
     *::after {
         transition: none !important;
     }
-}
+    }
