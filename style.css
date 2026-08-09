@@ -1,0 +1,886 @@
+/* =========================================================
+   DELAUNAY BOOK
+   Editorial / Art Book / Scholarly Publication
+   ========================================================= */
+
+:root {
+    --paper: #f5f3ee;
+    --ink: #171717;
+    --muted: #6f6d68;
+    --line: #d7d3ca;
+    --accent: #8b3f32;
+
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", Arial, sans-serif;
+
+    --page-width: 1440px;
+    --text-width: 760px;
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 7rem;
+    --space-xxl: 11rem;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY
+   ========================================================= */
+
+p,
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 1.75rem;
+}
+
+em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.site-nav {
+    width: 100%;
+    border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+    width: min(100% - 4rem, var(--page-width));
+    min-height: 78px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav-brand {
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    font-weight: 500;
+    letter-spacing: 0.015em;
+}
+
+.nav-meta {
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    width: min(100% - 4rem, var(--page-width));
+    min-height: calc(100vh - 79px);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.65fr);
+    align-items: center;
+    gap: clamp(4rem, 10vw, 12rem);
+
+    padding: var(--space-xxl) 0;
+}
+
+.hero-copy {
+    max-width: 900px;
+}
+
+.kicker {
+    margin-bottom: 1.75rem;
+
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    max-width: 850px;
+    margin-bottom: 1.75rem;
+
+    font-family: var(--serif);
+    font-size: clamp(5.5rem, 10vw, 10.5rem);
+    font-weight: 300;
+    letter-spacing: -0.045em;
+    line-height: 0.84;
+}
+
+.hero-title em {
+    display: inline-block;
+}
+
+.hero-subtitle {
+    max-width: 680px;
+    margin: 0;
+
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: clamp(1.7rem, 2.5vw, 2.55rem);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.hero-index {
+    align-self: end;
+    max-width: 360px;
+    padding-bottom: 1rem;
+}
+
+.hero-index-number {
+    margin-bottom: 1.4rem;
+
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.hero-index-text {
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SHARED SECTION LABEL
+   ========================================================= */
+
+.section-label {
+    margin: 0;
+
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.intro {
+    border-top: 1px solid var(--line);
+}
+
+.intro-grid {
+    width: min(100% - 4rem, var(--page-width));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(180px, 0.6fr) minmax(0, 1.4fr);
+    gap: clamp(4rem, 10vw, 12rem);
+
+    padding: var(--space-xxl) 0;
+}
+
+.intro-lead {
+    max-width: var(--text-width);
+    margin-bottom: 2.75rem;
+
+    font-family: var(--serif);
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+}
+
+.intro-copy {
+    max-width: 720px;
+    margin-bottom: 0;
+
+    color: var(--muted);
+    font-size: 1.12rem;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   BOOK DATA
+   ========================================================= */
+
+.book-data {
+    width: min(100% - 4rem, var(--page-width));
+    margin: 0 auto;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.data-item {
+    min-height: 170px;
+    padding: 2.25rem 1.75rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-right: 1px solid var(--line);
+}
+
+.data-item:first-child {
+    padding-left: 0;
+}
+
+.data-item:last-child {
+    padding-right: 0;
+    border-right: 0;
+}
+
+.data-label {
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.data-value {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   STUDY / CHAPTER INDEX
+   ========================================================= */
+
+.index {
+    width: min(100% - 4rem, var(--page-width));
+    margin: 0 auto;
+
+    padding: var(--space-xxl) 0;
+}
+
+.index-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+    gap: clamp(4rem, 10vw, 12rem);
+
+    padding-bottom: var(--space-xl);
+}
+
+.index-title {
+    max-width: 700px;
+    margin: 1.75rem 0 0;
+
+    font-family: var(--serif);
+    font-size: clamp(4rem, 6.5vw, 7.4rem);
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 0.88;
+}
+
+.index-note {
+    align-self: end;
+    max-width: 420px;
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.theme-list {
+    border-top: 1px solid var(--line);
+}
+
+.theme {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 110px minmax(280px, 0.8fr) minmax(260px, 0.7fr);
+    gap: 2.5rem;
+
+    padding: 3.25rem 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.theme-number {
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.theme-title {
+    max-width: 560px;
+    margin: 0;
+
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.2vw, 3.3rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+}
+
+.theme-description {
+    max-width: 430px;
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURE — SONIA DELAUNAY
+   ========================================================= */
+
+.feature {
+    width: min(100% - 4rem, var(--page-width));
+    margin: 0 auto;
+
+    padding-bottom: var(--space-xxl);
+}
+
+.feature-box {
+    min-height: 680px;
+    padding: clamp(3rem, 8vw, 8rem);
+
+    display: flex;
+    align-items: center;
+
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.feature-copy {
+    max-width: 900px;
+}
+
+.feature .kicker {
+    color: #aaa79f;
+}
+
+.feature-title {
+    margin-bottom: 2.25rem;
+
+    font-family: var(--serif);
+    font-size: clamp(4.7rem, 8.5vw, 8.8rem);
+    font-weight: 300;
+    letter-spacing: -0.045em;
+    line-height: 0.86;
+}
+
+.feature-text {
+    max-width: 680px;
+    margin: 0;
+
+    color: #c5c1b8;
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   CENTRAL IDEA
+   ========================================================= */
+
+.structure {
+    border-top: 1px solid var(--line);
+}
+
+.structure-grid {
+    width: min(100% - 4rem, var(--page-width));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(180px, 0.6fr) minmax(0, 1.4fr);
+    gap: clamp(4rem, 10vw, 12rem);
+
+    padding: var(--space-xxl) 0;
+}
+
+.structure-copy {
+    max-width: var(--text-width);
+}
+
+.structure-copy p {
+    margin-bottom: 2.5rem;
+
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: -0.015em;
+    line-height: 1.18;
+}
+
+.structure-copy p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PURCHASE
+   ========================================================= */
+
+.purchase {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.purchase-grid {
+    width: min(100% - 4rem, var(--page-width));
+    margin: 0 auto;
+
+    min-height: 580px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    align-items: center;
+    gap: 6rem;
+
+    padding: var(--space-xxl) 0;
+}
+
+.purchase-title {
+    max-width: 750px;
+    margin: 1.75rem 0;
+
+    font-family: var(--serif);
+    font-size: clamp(4rem, 6.5vw, 7rem);
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+}
+
+.purchase-copy {
+    max-width: 620px;
+    margin: 0;
+
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    line-height: 1.35;
+}
+
+.purchase-link {
+    min-height: 82px;
+    padding: 0 1.75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        padding 180ms ease;
+}
+
+.purchase-link span:last-child {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0;
+}
+
+.purchase-link:hover {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+
+    background: var(--ink);
+    color: var(--paper);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    width: min(100% - 4rem, var(--page-width));
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    padding: var(--space-xl) 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.footer-heading {
+    margin-bottom: 1.2rem;
+
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+}
+
+.footer-link {
+    color: var(--muted);
+    font-size: 1rem;
+
+    transition: color 180ms ease;
+}
+
+.footer-link:hover {
+    color: var(--ink);
+}
+
+.footer-bottom {
+    min-height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 400;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FOCUS STATES
+   ========================================================= */
+
+a:focus-visible {
+    outline: 1px solid var(--ink);
+    outline-offset: 6px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    :root {
+        --space-xl: 5rem;
+        --space-xxl: 8rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+
+    .hero-index {
+        align-self: auto;
+        max-width: 520px;
+        margin-left: auto;
+    }
+
+    .intro-grid,
+    .structure-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .index-head {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .index-note {
+        max-width: 600px;
+    }
+
+    .theme {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .theme-description {
+        grid-column: 2;
+        max-width: 600px;
+    }
+
+    .purchase-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .purchase-link {
+        max-width: 560px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    :root {
+        --space-lg: 3rem;
+        --space-xl: 4rem;
+        --space-xxl: 6rem;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+
+    .nav-inner,
+    .hero,
+    .intro-grid,
+    .book-data,
+    .index,
+    .feature,
+    .structure-grid,
+    .purchase-grid,
+    .footer {
+        width: min(100% - 2.5rem, var(--page-width));
+    }
+
+    .nav-inner {
+        min-height: 64px;
+    }
+
+    .nav-brand {
+        font-size: 1.4rem;
+    }
+
+    .nav-meta {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+
+    .hero-title {
+        font-size: clamp(4rem, 17vw, 6.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero-index {
+        margin-left: 0;
+    }
+
+    .hero-index-text {
+        font-size: 1rem;
+    }
+
+    .intro-grid,
+    .structure-grid {
+        gap: 2.5rem;
+    }
+
+    .intro-lead {
+        font-size: 2rem;
+    }
+
+    .intro-copy {
+        font-size: 1rem;
+    }
+
+    .book-data {
+        display: block;
+    }
+
+    .data-item,
+    .data-item:first-child,
+    .data-item:last-child {
+        min-height: auto;
+        padding: 1.5rem 0;
+
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1.5rem;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .data-item:last-child {
+        border-bottom: 0;
+    }
+
+    .data-value {
+        text-align: right;
+        font-size: 1.25rem;
+    }
+
+    .index-title {
+        font-size: clamp(3.2rem, 15vw, 5rem);
+    }
+
+    .theme {
+        grid-template-columns: 50px 1fr;
+        gap: 1rem;
+
+        padding: 2.5rem 0;
+    }
+
+    .theme-number {
+        font-size: 1.5rem;
+    }
+
+    .theme-title {
+        font-size: 2rem;
+    }
+
+    .theme-description {
+        grid-column: 2;
+        font-size: 0.98rem;
+    }
+
+    .feature-box {
+        min-height: 500px;
+        padding: 3rem 2rem;
+    }
+
+    .feature-title {
+        font-size: clamp(3.8rem, 16vw, 6rem);
+    }
+
+    .feature-text {
+        font-size: 1rem;
+    }
+
+    .structure-copy p {
+        font-size: 1.7rem;
+    }
+
+    .purchase-title {
+        font-size: clamp(3.3rem, 15vw, 5.5rem);
+    }
+
+    .purchase-copy {
+        font-size: 1.3rem;
+    }
+
+    .purchase-link {
+        min-height: 68px;
+        font-size: 0.72rem;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-link {
+        font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+        min-height: auto;
+        padding: 1.5rem 0;
+
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+  }
