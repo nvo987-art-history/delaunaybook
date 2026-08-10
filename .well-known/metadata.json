@@ -1,0 +1,103 @@
+{
+  "name": "Delaunay Book",
+  "title": "Color as a Generative Principle in the Work of Sonia Delaunay",
+  "subtitle": "A scholarly study of colour, perception, structure and generative systems",
+  "url": "https://delaunaybook.us/",
+  "canonical": "https://delaunaybook.us/",
+  "language": "en",
+  "inLanguage": "en",
+  "datePublished": "2026",
+  "author": {
+    "name": "Nicholas Van-Orton",
+    "url": "https://nvo987.us/",
+    "orcid": "https://orcid.org/0009-0007-4628-1871",
+    "did": "did:web:identity.nvo987.us"
+  },
+  "publisher": {
+    "name": "NVO987-Culture Visuelle Moderne et Contemporaine",
+    "url": "https://nvo987.fr/",
+    "location": {
+      "city": "Paris",
+      "country": "FR"
+    }
+  },
+  "publication": {
+    "format": "Paperback",
+    "isbn": "978-615-83133-5-3",
+    "doi": "https://doi.org/10.17613/802rd-bjr69"
+  },
+  "relatedEditions": [
+    {
+      "title": "Color as a Generative Principle in the Work of Sonia Delaunay",
+      "format": "EPUB",
+      "isbn": "978-615-83133-6-0"
+    },
+    {
+      "title": "Color as a Generative Principle in the Work of Sonia Delaunay",
+      "format": "PDF",
+      "isbn": "9786150260921"
+    },
+    {
+      "title": "A szín mint generatív elv Sonia Delaunay életművében",
+      "language": "hu",
+      "format": "Paperback",
+      "isbn": "978-615-83133-0-8",
+      "doi": "https://doi.org/10.17613/y22fc-g0f98"
+    },
+    {
+      "title": "A szín mint generatív elv Sonia Delaunay életművében",
+      "language": "hu",
+      "format": "PDF",
+      "isbn": "978-615-83133-1-5"
+    },
+    {
+      "title": "A szín mint generatív elv Sonia Delaunay életművében",
+      "language": "hu",
+      "format": "EPUB",
+      "isbn": "978-615-83133-2-2"
+    }
+  ],
+  "subjects": [
+    "Sonia Delaunay",
+    "colour theory",
+    "color theory",
+    "art history",
+    "visual culture",
+    "modern art",
+    "contemporary art",
+    "digital imaging",
+    "generative art",
+    "Simultanism"
+  ],
+  "scholarlyResources": [
+    {
+      "title": "Color as a Generative Principle in the Work of Sonia Delaunay",
+      "type": "ScholarlyArticle",
+      "doi": "https://doi.org/10.2139/ssrn.6007654"
+    },
+    {
+      "title": "Interdisciplinary Foundation Edition",
+      "type": "ScholarlyArticle",
+      "doi": "https://doi.org/10.2139/ssrn.6131506"
+    }
+  ],
+  "identity": {
+    "did": "did:web:identity.nvo987.us",
+    "didDocument": "https://identity.nvo987.us/.well-known/did.json",
+    "didConfiguration": "https://identity.nvo987.us/.well-known/did-configuration.json",
+    "webfinger": "https://delaunaybook.us/.well-known/webfinger"
+  },
+  "feeds": {
+    "rss": "https://delaunaybook.us/rss.xml",
+    "atom": "https://delaunaybook.us/atom.xml"
+  },
+  "discovery": {
+    "robots": "https://delaunaybook.us/robots.txt",
+    "sitemap": "https://delaunaybook.us/sitemap.xml",
+    "llms": "https://delaunaybook.us/llms.txt",
+    "ai": "https://delaunaybook.us/ai.txt"
+  },
+  "contact": {
+    "email": "contact@delaunaybook.us"
+  }
+}
