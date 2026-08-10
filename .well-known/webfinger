@@ -1,0 +1,27 @@
+{
+  "subject": "https://delaunaybook.us/",
+  "aliases": [
+    "https://delaunaybook.us",
+    "https://nvo987.us"
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "type": "text/html",
+      "href": "https://delaunaybook.us/"
+    },
+    {
+      "rel": "canonical",
+      "href": "https://delaunaybook.us/"
+    },
+    {
+      "rel": "author",
+      "href": "https://nvo987.us/"
+    },
+    {
+      "rel": "describedby",
+      "type": "application/ld+json",
+      "href": "https://delaunaybook.us/"
+    }
+  ]
+}
