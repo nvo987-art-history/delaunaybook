@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Delaunay Book</title>
+    <link>https://delaunaybook.us/</link>
+    <description>
+      Color as a Generative Principle in the Work of Sonia Delaunay
+      by Nicholas Van-Orton.
+    </description>
+    <language>en</language>
+    <lastBuildDate>Sun, 09 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <generator>Delaunay Book</generator>
+
+    <item>
+      <title>Color as a Generative Principle in the Work of Sonia Delaunay</title>
+      <link>https://delaunaybook.us/</link>
+      <guid isPermaLink="true">https://delaunaybook.us/</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
+      <description>
+        A scholarly study tracing the development of colour from scientific
+        phenomenon and perception toward an autonomous structural and
+        generative principle in the work of Sonia Delaunay.
+      </description>
+      <category>Art History</category>
+      <category>Sonia Delaunay</category>
+      <category>Colour Theory</category>
+      <category>Generative Art</category>
+    </item>
+
+  </channel>
+</rss>
