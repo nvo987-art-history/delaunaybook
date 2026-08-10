@@ -1,0 +1,22 @@
+{
+  "links": [
+    {
+      "rel": "lrdd",
+      "template": "https://delaunaybook.us/.well-known/webfinger?resource={uri}",
+      "type": "application/jrd+json"
+    },
+    {
+      "rel": "author",
+      "href": "https://nvo987.us/"
+    },
+    {
+      "rel": "describedby",
+      "type": "application/ld+json",
+      "href": "https://delaunaybook.us/"
+    },
+    {
+      "rel": "canonical",
+      "href": "https://delaunaybook.us/"
+    }
+  ]
+}
