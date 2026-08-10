@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use or cite this publication, please cite the relevant edition and identifier."
+title: "Color as a Generative Principle in the Work of Sonia Delaunay"
+version: "2026"
+type: book
+authors:
+  - family-names: "Van-Orton"
+    given-names: "Nicholas"
+    orcid: "https://orcid.org/0009-0007-4628-1871"
+date-released: "2026"
+publisher:
+  name: "NVO987-Culture Visuelle Moderne et Contemporaine"
+  address:
+    city: "Paris"
+    country: "FR"
+repository-code: "https://delaunaybook.us/"
+url: "https://delaunaybook.us/"
+identifiers:
+  - type: doi
+    value: "10.17613/802rd-bjr69"
+    description: "DOI for the English print edition"
+  - type: isbn
+    value: "978-615-83133-5-3"
+    description: "ISBN for the English print edition"
+keywords:
+  - "Sonia Delaunay"
+  - "colour"
+  - "color"
+  - "generative art"
+  - "modern art"
+  - "art history"
+  - "visual culture"
+  - "colour theory"
+  - "digital imaging"
+abstract: >
+  A scholarly study examining colour as a generative and organising principle
+  in the work of Sonia Delaunay, tracing its development from scientific
+  theories of light and perception through modern painting, textile design,
+  digital imaging and generative art.
