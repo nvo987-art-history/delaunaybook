@@ -1,0 +1,52 @@
+/* TEAM */
+
+Author / Researcher: Nicholas Van-Orton
+ORCID: https://orcid.org/0009-0007-4628-1871
+
+Project: Delaunay Book
+Website: https://delaunaybook.us/
+
+Publisher / Organization:
+NVO987-Culture Visuelle Moderne et Contemporaine
+
+Location: Paris, France
+
+/* PUBLICATION */
+
+Title:
+Color as a Generative Principle in the Work of Sonia Delaunay
+
+Publication year: 2026
+
+English print ISBN:
+978-615-83133-5-3
+
+English print DOI:
+10.17613/802rd-bjr69
+
+/* CONTACT */
+
+Email: contact@delaunaybook.us
+
+/* IDENTITY */
+
+DID:
+did:web:identity.nvo987.us
+
+DID document:
+https://identity.nvo987.us/.well-known/did.json
+
+/* TECHNOLOGY */
+
+HTML
+CSS
+JSON-LD
+JSON
+XML
+Markdown
+YAML
+
+/* NOTE */
+
+This file identifies the principal author and project information published
+for the Delaunay Book website.
