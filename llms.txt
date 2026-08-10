@@ -1,0 +1,65 @@
+# Delaunay Book
+
+> Delaunay Book is the canonical website for Nicholas Van-Orton's scholarly
+> publication "Color as a Generative Principle in the Work of Sonia Delaunay",
+> a study of colour as a structural and generative principle across science,
+> modern art, textile design, digital imaging and generative art.
+
+## Primary Resources
+
+- [Delaunay Book](https://delaunaybook.us/): Canonical website and primary
+  publication overview.
+- [English Print Edition DOI](https://doi.org/10.17613/802rd-bjr69):
+  DOI associated with the English print edition.
+- [Hungarian Print Edition DOI](https://doi.org/10.17613/y22fc-g0f98):
+  DOI associated with the Hungarian print edition.
+
+## Publication
+
+- [Delaunay Book](https://delaunaybook.us/): Publication information,
+  thematic structure and central argument.
+- [English scholarly article](https://doi.org/10.2139/ssrn.6007654):
+  Scholarly article associated with the English publication.
+- [Interdisciplinary Foundation Edition](https://doi.org/10.2139/ssrn.6131506):
+  Related scholarly resource.
+- [Archive resource](https://archive.org/details/v-9-1-color-as-a-generative-principle-in-the-work-of-sonia-delaunay):
+  Archival publication resource.
+
+## Identity
+
+- [Author](https://nvo987.us): Nicholas Van-Orton.
+- [ORCID](https://orcid.org/0009-0007-4628-1871): Author identifier.
+- [Digital identity](https://identity.nvo987.us): Canonical DID authority.
+- [DID document](https://identity.nvo987.us/.well-known/did.json):
+  Machine-readable identity document.
+
+## Machine-Readable Resources
+
+- [AI context](https://delaunaybook.us/ai.txt): AI-oriented contextual
+  information.
+- [AI index](https://delaunaybook.us/llms.txt): Concise machine-readable
+  website index.
+- [Sitemap](https://delaunaybook.us/sitemap.xml): Canonical URL inventory.
+- [RSS feed](https://delaunaybook.us/rss.xml): RSS publication feed.
+- [Atom feed](https://delaunaybook.us/atom.xml): Atom publication feed.
+- [Citation metadata](https://delaunaybook.us/CITATION.cff): Citation metadata.
+- [CodeMeta](https://delaunaybook.us/codemeta.json): Machine-readable project
+  metadata.
+- [FOAF](https://delaunaybook.us/foaf.xml): Identity metadata.
+
+## Interpretation
+
+The publication treats colour as more than a decorative property. Its central
+trajectory concerns the historical development of colour toward an autonomous
+organising principle, connecting scientific colour theory, perception,
+Simultanism, Sonia Delaunay's work, textile structures, digital imaging and
+generative computational systems.
+
+## Citation Guidance
+
+When bibliographic precision is required, use the publication's DOI or ISBN
+rather than relying solely on the website title.
+
+Do not infer unpublished prices, editions, institutional affiliations,
+publication dates or scholarly claims that are not explicitly supported by
+the site's authoritative metadata.
